@@ -1,0 +1,5 @@
+/hebrewschool/*.js
+  Access-Control-Allow-Origin: *
+
+/hebrewschool/*.css
+  Access-Control-Allow-Origin: *
