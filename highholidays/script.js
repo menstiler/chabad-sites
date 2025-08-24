@@ -4,17 +4,17 @@ const url =
 const PAGE_SCRIPTS = [
   {
     aid: "ArticleCcoResponse_cdo/aid/6974961",
-    href: "https://menstiler.github.io/highholidays/update-sheet.js",
+    href: "https://master.d30e3s3s5i7pu8.amplifyapp.com/highholidays/update-sheet.js",
     type: "script",
   },
   {
     aid: "6974961",
-    href: "https://menstiler.github.io/highholidays/donate-form.css",
+    href: "https://master.d30e3s3s5i7pu8.amplifyapp.com/highholidays/donate-form.css",
     type: "style",
   },
   {
     aid: "6974961",
-    href: "https://menstiler.github.io/highholidays/donate-form.js",
+    href: "https://master.d30e3s3s5i7pu8.amplifyapp.com/highholidays/donate-form.js",
     type: "script",
   },
 ];
