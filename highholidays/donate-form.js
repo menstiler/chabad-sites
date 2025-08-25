@@ -79,7 +79,7 @@ function getFromSheet() {
                     direction: "left",
                     startEmpty: true,
                     duplicate: false,
-                    hoverpause: true,
+                    hoverpause: false,
                   });
                 });
               }
@@ -96,6 +96,16 @@ function getFromSheet() {
 }
 
 function pageSetup() {
+  const articleHeader = document.querySelector(".master-content-wrapper");
+  articleHeader.insertAdjacentHTML(
+    "beforebegin",
+    `
+  <div class='banner'><img src='https://w2.chabad.org/media/images/1332/Utwa13329855.png' />
+  <img src='https://w2.chabad.org/media/images/1332/wHmB13329854.png' />
+  </div>
+  `
+  );
+
   const divEl = document.createElement("div");
   divEl.id = "amount-display";
   divEl.innerHTML = `<div class="center">${Co.Settings.MosadName} receives</div><div class="amount">$0</div>`;

@@ -23,6 +23,10 @@ body.mobile div#chabad_body_content {
 }
 
 .content_page {
+  .banner img {
+    width: 100%;
+  }
+
   .master-content-wrapper {
     background-image: url(https://chabadofislip.com/media/images/1329/uPFI13291498.png);
     background-size: cover;
