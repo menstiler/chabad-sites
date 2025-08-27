@@ -97,13 +97,13 @@ function getFromSheet() {
 
 function pageSetup() {
   const articleHeader = document.querySelector(".master-content-wrapper");
+  let bannerImg = "https://w2.chabad.org/media/images/1332/Utwa13329855.png";
+  if (window.location.href.indexOf("7017843") !== -1) {
+    bannerImg = "https://w2.chabad.org/media/images/1332/wHmB13329854.png";
+  }
   articleHeader.insertAdjacentHTML(
     "beforebegin",
-    `
-  <div class='banner'><img src='https://w2.chabad.org/media/images/1332/Utwa13329855.png' />
-  <img src='https://w2.chabad.org/media/images/1332/wHmB13329854.png' />
-  </div>
-  `
+    `<div class='banner'><img src=${bannerImg} /></div>`
   );
 
   const divEl = document.createElement("div");

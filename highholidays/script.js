@@ -17,6 +17,16 @@ const PAGE_SCRIPTS = [
     href: "https://master.d30e3s3s5i7pu8.amplifyapp.com/highholidays/donate-form.js",
     type: "script",
   },
+  {
+    aid: "7017843",
+    href: "https://master.d30e3s3s5i7pu8.amplifyapp.com/highholidays/donate-form.css",
+    type: "style",
+  },
+  {
+    aid: "7017843",
+    href: "https://master.d30e3s3s5i7pu8.amplifyapp.com/highholidays/donate-form.js",
+    type: "script",
+  },
 ];
 
 function pageSpecificStyling(url) {
