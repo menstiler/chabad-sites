@@ -23,20 +23,24 @@ body.mobile div#chabad_body_content {
 }
 
 .content_page {
-  .banner img {
-    width: 100%;
-  }
-
   .master-content-wrapper {
-    background-image: url(https://chabadofislip.com/media/images/1329/uPFI13291498.png);
+    background: url(https://chabadofislip.com/media/images/1329/uPFI13291498.png);
     background-size: cover;
-    /* position: absolute; */
-    padding: 50px 0;
+    padding: 20px 0 50px;
     color: white;
     top: -50px;
-    bottom: 300px;
+    bottom: 0;
     right: 0;
     left: 0;
+
+    @media (max-width: 650px) {
+      background-image: url(https://chabadofislip.com/media/images/1333/mlKZ13330445.png);
+      background-position: bottom;
+    }
+  }
+
+  .banner img {
+    width: 100%;
   }
 
   .article-header__subtitle,
@@ -57,6 +61,29 @@ body.mobile div#chabad_body_content {
     border-radius: 5px;
   }
 
+  .matchers-container {
+    margin: 2rem;
+  }
+
+  .matchers-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+
+    @media (max-width: 650px) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(120px, 1fr));
+    }
+  }
+
+  .matcher img {
+    width: 150px;
+
+    @media (max-width: 650px) {
+      width: 100%;
+    }
+  }
+
   .progress-bar {
     background-color: #b53a78;
     border-radius: 5px;
@@ -75,7 +102,11 @@ body.mobile div#chabad_body_content {
     font-size: 20px;
     font-family: "Montserrat";
     text-align: center;
-    margin: 2rem;
+    margin: 2rem auto;
+    width: 75%;
+    text-align: center;
+    z-index: 2;
+    position: relative;
   }
 
   .dedication-text {
@@ -290,6 +321,10 @@ body.mobile div#chabad_body_content {
 
       .amount {
         font-weight: 500;
+      }
+
+      .matched-text {
+        font-size: 14px;
       }
     }
 

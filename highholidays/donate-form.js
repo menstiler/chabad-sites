@@ -77,7 +77,7 @@ function getFromSheet() {
                   $j(".ticker-track").webTicker({
                     speed: 50,
                     direction: "left",
-                    startEmpty: true,
+                    startEmpty: false,
                     duplicate: false,
                     hoverpause: false,
                   });
@@ -96,20 +96,13 @@ function getFromSheet() {
 }
 
 function pageSetup() {
-  const articleHeader = document.querySelector(".master-content-wrapper");
-  let bannerImg = "https://w2.chabad.org/media/images/1332/Utwa13329855.png";
-  if (window.location.href.indexOf("7017843") !== -1) {
-    bannerImg = "https://w2.chabad.org/media/images/1332/wHmB13329854.png";
-  }
-  articleHeader.insertAdjacentHTML(
-    "beforebegin",
-    `<div class='banner'><img src=${bannerImg} /></div>`
-  );
-
   const divEl = document.createElement("div");
   divEl.id = "amount-display";
-  divEl.innerHTML = `<div class="center">${Co.Settings.MosadName} receives</div><div class="amount">$0</div>`;
-  document.getElementById("id_19").appendChild(divEl);
+  divEl.innerHTML = `<div class="center">${Co.Settings.MosadName} receives</div><div class="amount">$0</div><div class="matched-text">Every dollar is being matched 2X</div>`;
+
+  const amountContainer = document.getElementById("id_19");
+  if (!amountContainer) return;
+  amountContainer.appendChild(divEl);
 
   $amountOptions = document.querySelectorAll(".form-radio[name='q21_input21']");
   $amountInput = document.getElementById("input_19");
@@ -128,7 +121,7 @@ function pageSetup() {
       } else {
         const total = parseFloat(e.target.value.replace("$", ""));
         $amountInput.setValue(total);
-        $displayAmount.textContent = total.toLocaleString("en-US", {
+        $displayAmount.textContent = (total * 2).toLocaleString("en-US", {
           style: "currency",
           currency: "USD",
         });
@@ -140,10 +133,13 @@ function pageSetup() {
 
   $amountInput.addEventListener("input", function (e) {
     const total = parseFloat(e.target.value);
-    let amountToDisplay = parseFloat(e.target.value).toLocaleString("en-US", {
-      style: "currency",
-      currency: "USD",
-    });
+    let amountToDisplay = parseFloat(e.target.value * 2).toLocaleString(
+      "en-US",
+      {
+        style: "currency",
+        currency: "USD",
+      }
+    );
     if (isNaN(total)) {
       amountToDisplay = "$0";
     }
@@ -185,17 +181,55 @@ function pageSetup() {
 }
 
 function headerSetup() {
-  const articleHeader = jQuery(".master-content-wrapper");
+  let articleHeader = jQuery(".master-content-wrapper");
 
-  articleHeader.append(
-    `<div class="campaign-article">some text about the campaign</div>`
-  );
+  if (articleHeader.length === 0) {
+    jQuery(".body_wrapper").before(
+      '<div class="master-content-wrapper"></div>'
+    );
+
+    // Re-select the newly created element
+    articleHeader = jQuery(".master-content-wrapper");
+  }
+  jQuery(".article-header__title").remove();
+
+  articleHeader.before(`
+  <div class="banner">
+    <picture>
+    <source srcset="https://w2.chabad.org/media/images/1332/wHmB13329854.png" media="(max-width: 650px)">
+    <img src="https://w2.chabad.org/media/images/1332/Utwa13329855.png" alt="Hero Banner" class="banner-img">
+  </picture>
+  </div>
+  `);
+  articleHeader.append(`
+  <div class="campaign-article">
+    With the High Holidays on the horizon, our hearts are filled with hope and gratitude as we begin our annual campaign. The past year has shown us the strength of our connections and the power of coming together. As we prepare for the solemnity and inspiration of Kol Nidrei, we invite you to be a vital part of our mission.  
+    <br><br>
+    Thanks to a group of generous and devoted partners, every donation made in this campaign will be matched dollar-for-dollar. This means your support goes twice as far, transforming every gift into a powerful force for good.
+  </div>`);
   articleHeader.append(`<div class="campaign-progress">
               <h4>
                 $0 OF $0 RAISED
               </h4>
               <div class="progress-bar-container">
                 <div class="progress-bar"><span class="percent"></span></div>
+              </div>              
+              <div class="matchers-container">
+                <h4>MATCHERS</h4>
+                <div class="matchers-wrapper">
+                  <div class="matcher">
+                    <img src="https://chabadofislip.com/media/images/1332/MRNK13329969.png" />
+                  </div>
+                    <div class="matcher">
+                    <img src="https://chabadofislip.com/media/images/1332/ofra13329965.png" />
+                  </div>
+                  <div class="matcher">
+                    <img src="https://chabadofislip.com/media/images/1332/UtJE13329971.png" />
+                  </div>
+                   <div class="matcher">
+                    <img src="https://chabadofislip.com/media/images/1332/lZMK13329970.png" />
+                  </div>
+                </div>
               </div>
             </div>
             <div class="ticker-container">
