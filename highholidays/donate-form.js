@@ -207,15 +207,8 @@ function headerSetup() {
     <br><br>
     Thanks to a group of generous and devoted partners, every donation made in this campaign will be matched dollar-for-dollar. This means your support goes twice as far, transforming every gift into a powerful force for good.
   </div>`);
-  articleHeader.append(`<div class="campaign-progress">
-              <h4>
-                $0 OF $0 RAISED
-              </h4>
-              <div class="progress-bar-container">
-                <div class="progress-bar"><span class="percent"></span></div>
-              </div>              
+  articleHeader.append(`             
               <div class="matchers-container">
-                <h4>MATCHERS</h4>
                 <div class="matchers-wrapper">
                   <div class="matcher">
                     <img src="https://chabadofislip.com/media/images/1332/MRNK13329969.png" />
@@ -231,6 +224,13 @@ function headerSetup() {
                   </div>
                 </div>
               </div>
+              <div class="campaign-progress">
+              <h4>
+                $0 OF $0 RAISED
+              </h4>
+              <div class="progress-bar-container">
+                <div class="progress-bar"><span class="percent"></span></div>
+              </div> 
             </div>
             <div class="ticker-container">
               <ul class="ticker-track">
