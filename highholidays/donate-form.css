@@ -62,10 +62,13 @@ body.mobile div#chabad_body_content {
   }
 
   .matchers-container {
+    font-family: "Montserrat";
+    text-align: center;
     margin: 4rem;
   }
 
   .matchers-wrapper {
+    margin: 2rem;
     display: flex;
     justify-content: center;
     gap: 3rem;

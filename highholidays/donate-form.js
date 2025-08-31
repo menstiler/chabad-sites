@@ -209,6 +209,7 @@ function headerSetup() {
   </div>`);
   articleHeader.append(`             
               <div class="matchers-container">
+              <h3>OUR MATCHERS</h3>            
                 <div class="matchers-wrapper">
                   <div class="matcher">
                     <img src="https://chabadofislip.com/media/images/1332/MRNK13329969.png" />
