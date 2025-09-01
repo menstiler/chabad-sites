@@ -51,20 +51,19 @@ body.mobile div#chabad_body_content {
 
   .campaign-progress {
     font-family: "Montserrat";
-    margin: 2rem;
     margin: 2rem auto;
     border-radius: 0;
   }
 
   .progress-bar-container {
     border: 1px solid;
-    border-radius: 5px;
+    background: #e5e7eb;
   }
 
   .matchers-container {
     font-family: "Montserrat";
     text-align: center;
-    margin: 4rem;
+    margin: 2rem 4rem 4rem;
   }
 
   .matchers-wrapper {
@@ -89,7 +88,6 @@ body.mobile div#chabad_body_content {
 
   .progress-bar {
     background-color: #b53a78;
-    border-radius: 5px;
   }
 
   .donate-form-container {
@@ -105,7 +103,7 @@ body.mobile div#chabad_body_content {
     font-size: 20px;
     font-family: "Montserrat";
     text-align: center;
-    margin: 2rem auto;
+    margin: 4rem auto;
     width: 75%;
     text-align: center;
     z-index: 2;
@@ -480,6 +478,37 @@ body.mobile div#chabad_body_content {
       &::placeholder {
         color: #fff;
       }
+    }
+  }
+}
+
+.mobile-button-container {
+  display: none;
+
+  @media (max-width: 650px) {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    z-index: 999;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    align-items: center;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+
+    a {
+      width: 250px;
+      background: var(--primary-color);
+      text-align: center;
+      padding: 17px;
+      color: white;
+      font-family: "Montserrat";
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      border-radius: 50rem;
     }
   }
 }

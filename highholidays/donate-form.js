@@ -200,13 +200,20 @@ function headerSetup() {
     <img src="https://w2.chabad.org/media/images/1332/Utwa13329855.png" alt="Hero Banner" class="banner-img">
   </picture>
   </div>
-  `);
-  articleHeader.append(`
+   <div class="campaign-progress">
+    <h4>
+      $0 OF $0 RAISED
+    </h4>
+    <div class="progress-bar-container">
+      <div class="progress-bar"><span class="percent"></span></div>
+    </div> 
+  </div>
   <div class="campaign-article">
     With the High Holidays on the horizon, our hearts are filled with hope and gratitude as we begin our annual campaign. The past year has shown us the strength of our connections and the power of coming together. As we prepare for the solemnity and inspiration of Kol Nidrei, we invite you to be a vital part of our mission.  
     <br><br>
     Thanks to a group of generous and devoted partners, every donation made in this campaign will be matched dollar-for-dollar. This means your support goes twice as far, transforming every gift into a powerful force for good.
-  </div>`);
+  </div>
+  `);
   articleHeader.append(`             
               <div class="matchers-container">
               <h3>OUR MATCHERS</h3>            
@@ -224,20 +231,16 @@ function headerSetup() {
                     <img src="https://chabadofislip.com/media/images/1332/lZMK13329970.png" />
                   </div>
                 </div>
-              </div>
-              <div class="campaign-progress">
-              <h4>
-                $0 OF $0 RAISED
-              </h4>
-              <div class="progress-bar-container">
-                <div class="progress-bar"><span class="percent"></span></div>
-              </div> 
-            </div>
+              </div>              
             <div class="ticker-container">
               <ul class="ticker-track">
               </ul>
             </div>
             `);
+  document.body.insertAdjacentHTML(
+    "beforeend",
+    `<div class="mobile-button-container"> <a href="#6974961">DONATE</a></div>`
+  );
 }
 
 function init() {
