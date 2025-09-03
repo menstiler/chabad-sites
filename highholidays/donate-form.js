@@ -13,9 +13,8 @@ function getFromSheet() {
         const tickerTrack = document.querySelector(".ticker-track");
         tickerTrack.style.display = "none";
         tickerTrack.innerHTML = "";
-        const donorsTitle = document.querySelector(".donors-title");
 
-        if (!donorsTitle && donors.length > 0) {
+        if (donors.length > 0 && donors[0][0].length > 0) {
           const $latestDonors = jQuery(".ticker-container");
           const newEl = document.createElement("h4");
           newEl.textContent = "Thank you to our latest donors";
@@ -25,22 +24,24 @@ function getFromSheet() {
 
         donors.forEach(([name, amount, dedication, current, goal], index) => {
           if (index !== donors.length - 1) {
-            const li = document.createElement("li");
-            li.className = "donor-item";
-            li.innerHTML = `<div class="name">${name}</div><div class="amount"> $${parseInt(
-              amount,
-              10
-            ).toLocaleString()}</div>${
-              dedication ? `<div class="dedication">${dedication}</div>` : ""
-            }`;
-            tickerTrack.appendChild(li);
+            if (name.length > 0 || amount.length > 0) {
+              const li = document.createElement("li");
+              li.className = "donor-item";
+              li.innerHTML = `<div class="name">${name}</div><div class="amount"> $${parseInt(
+                amount,
+                10
+              ).toLocaleString()}</div>${
+                dedication ? `<div class="dedication">${dedication}</div>` : ""
+              }`;
+              tickerTrack.appendChild(li);
+            }
 
             if (current && goal) {
               const amountNumber = parseInt(current, 10);
               const goalNumber = parseInt(goal, 10);
               const percent = (amountNumber / goalNumber) * 100;
 
-              if (bar) {
+              if (bar && percent !== 0) {
                 bar.style.width = `min(calc(${percent}% + 45px), 100%)`;
                 bar.setAttribute("aria-valuenow", percent);
               }
@@ -49,7 +50,7 @@ function getFromSheet() {
                 label.textContent = `$${amountNumber.toLocaleString()} OF $${goalNumber.toLocaleString()} RAISED`;
               }
 
-              if (percentEl) {
+              if (percentEl && percent !== 0) {
                 const percentDisplay =
                   percent >= 1 ? percent.toFixed(0) : percent.toFixed(2);
                 percentEl.textContent = `${percentDisplay}%`;
@@ -59,11 +60,13 @@ function getFromSheet() {
         });
 
         function loadScript(src, callback) {
+          // if (document.querySelector(`script[src="${src}"]`) === null) {
           const script = document.createElement("script");
           script.src = src;
           script.onload = callback;
           script.onerror = () => console.error(`Failed to load script: ${src}`);
           document.head.appendChild(script);
+          // }
         }
 
         loadScript(
