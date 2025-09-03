@@ -185,6 +185,28 @@ function pageSetup() {
       }
     })
   );
+
+  const target = document.querySelector(".userform-form");
+  const banner = document.querySelector(".mobile-button-container");
+
+  if (target && banner) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            banner.classList.add("hidden");
+          } else {
+            if (entry.boundingClientRect.top > 0) {
+              banner.classList.remove("hidden");
+            }
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    observer.observe(target);
+  }
 }
 
 function headerSetup() {
@@ -251,8 +273,8 @@ function headerSetup() {
 }
 
 function init() {
-  pageSetup();
   headerSetup();
+  pageSetup();
   getFromSheet();
 }
 
