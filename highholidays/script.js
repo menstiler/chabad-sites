@@ -3,28 +3,18 @@ const url =
 
 const PAGE_SCRIPTS = [
   {
+    aid: "6974961",
+    href: "https://master.d36mxlltrtft80.amplifyapp.com/highholidays/donate-form.css",
+    type: "style",
+  },
+  {
+    aid: "6974961",
+    href: "https://master.d36mxlltrtft80.amplifyapp.com/highholidays/donate-form.js",
+    type: "script",
+  },
+  {
     aid: "ArticleCcoResponse_cdo/aid/6974961",
     href: "https://master.d36mxlltrtft80.amplifyapp.com/highholidays/update-sheet.js",
-    type: "script",
-  },
-  {
-    aid: "6974961",
-    href: "https://master.d36mxlltrtft80.amplifyapp.com/highholidays/donate-form.css",
-    type: "style",
-  },
-  {
-    aid: "6974961",
-    href: "https://master.d36mxlltrtft80.amplifyapp.com/highholidays/donate-form.js",
-    type: "script",
-  },
-  {
-    aid: "7017843",
-    href: "https://master.d36mxlltrtft80.amplifyapp.com/highholidays/donate-form.css",
-    type: "style",
-  },
-  {
-    aid: "7017843",
-    href: "https://master.d36mxlltrtft80.amplifyapp.com/highholidays/donate-form.js",
     type: "script",
   },
 ];

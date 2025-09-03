@@ -97,6 +97,7 @@ function getFromSheet() {
 }
 
 function pageSetup() {
+  jQuery(".appeal-container").remove();
   const divEl = document.createElement("div");
   divEl.id = "amount-display";
   divEl.innerHTML = `<div class="center">${Co.Settings.MosadName} receives</div><div class="amount">$0</div><div class="matched-text">Every dollar is being matched 2X</div>`;
@@ -267,16 +268,25 @@ function headerSetup() {
               </ul>
             </div>
             `);
-  document.body.insertAdjacentHTML(
-    "beforeend",
-    `<div class="mobile-button-container"> <a href="#6974961">DONATE</a></div>`
-  );
+  if (!window.location.pathname.includes("ArticleCcoResponse_cdo")) {
+    document.body.insertAdjacentHTML(
+      "beforeend",
+      `<div class="mobile-button-container"> <a href="#6974961">DONATE</a></div>`
+    );
+  } else {
+    document
+      .querySelector(".js-content")
+      .scrollIntoView({ behavior: "smooth", block: "center" });
+  }
 }
 
 function init() {
   headerSetup();
   pageSetup();
-  getFromSheet();
+  if (!window.location.pathname.includes("ArticleCcoResponse_cdo")) {
+    getFromSheet();
+    window.getFromSheet = getFromSheet;
+  }
 }
 
 if (document.readyState !== "loading") {

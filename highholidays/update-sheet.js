@@ -58,9 +58,6 @@ async function sendToSheet() {
 
 if (document.readyState !== "loading") {
   sendToSheet();
-  document
-    .querySelector(".js-content")
-    .scrollIntoView({ behavior: "smooth", block: "center" });
 } else {
   document.addEventListener("DOMContentLoaded", sendToSheet);
 }
