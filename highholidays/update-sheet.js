@@ -50,6 +50,7 @@ async function sendToSheet() {
     });
     console.log("Data sent");
     localStorage.setItem("submissionId", submissionId);
+    getFromSheet();
   } catch (err) {
     console.error("Error:", err);
   }
@@ -57,6 +58,9 @@ async function sendToSheet() {
 
 if (document.readyState !== "loading") {
   sendToSheet();
+  document
+    .querySelector(".js-content")
+    .scrollIntoView({ behavior: "smooth", block: "center" });
 } else {
   document.addEventListener("DOMContentLoaded", sendToSheet);
 }

@@ -404,7 +404,8 @@ body.mobile div#chabad_body_content {
       flex-wrap: wrap;
       gap: 1rem;
       grid-template-columns: repeat(4, 1fr);
-      width: 100%;
+      width: 80%;
+      margin: 0 auto;
 
       @media (max-width: 650px) {
         width: 100%;
@@ -422,13 +423,14 @@ body.mobile div#chabad_body_content {
     span.form-radio-item {
       background-image: url(https://w2.chabad.org/media/images/1329/QVSb13294597.png);
       color: white;
-      width: 218px;
-      height: 100px;
+      width: 175px;
+      height: 75px;
       justify-content: center;
       align-items: center;
       position: relative;
       background-size: cover;
       margin-bottom: 0px;
+      border-radius: 5px;
 
       @media (max-width: 650px) {
         width: 150px;

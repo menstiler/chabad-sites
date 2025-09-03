@@ -13,8 +13,9 @@ function getFromSheet() {
         const tickerTrack = document.querySelector(".ticker-track");
         tickerTrack.style.display = "none";
         tickerTrack.innerHTML = "";
+        const donorsTitle = document.querySelector(".donors-title");
 
-        if (donors.length > 0) {
+        if (!donorsTitle && donors.length > 0) {
           const $latestDonors = jQuery(".ticker-container");
           const newEl = document.createElement("h4");
           newEl.textContent = "Thank you to our latest donors";
