@@ -51,8 +51,10 @@ body.mobile div#chabad_body_content {
 
   .campaign-progress {
     font-family: "Montserrat";
-    margin: 2rem auto;
     border-radius: 0;
+    background: url(https://chabadofislip.com/media/images/1329/uPFI13291498.png);
+    background-size: cover;
+    color: white;
   }
 
   .progress-bar-container {

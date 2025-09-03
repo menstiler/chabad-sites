@@ -126,7 +126,6 @@ function pageSetup() {
           currency: "USD",
         });
       }
-
       $amountInput.dispatchEvent(new Event("change", { bubbles: true }));
     })
   );
@@ -178,6 +177,14 @@ function pageSetup() {
         });
       }
     });
+
+  $amountOptions.forEach((el) =>
+    el.addEventListener("change", function (e) {
+      if (window.innerWidth <= 768) {
+        $amountInput.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    })
+  );
 }
 
 function headerSetup() {

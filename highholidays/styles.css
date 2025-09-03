@@ -264,8 +264,7 @@ img.form-image {
 }
 
 .campaign-progress {
-  padding: 1.5rem;
-  width: 760px;
+  padding: 3rem;
   text-align: center;
 }
 
@@ -281,10 +280,14 @@ img.form-image {
 }
 
 .progress-bar-container {
-  width: 100%;
-  background-color: #e5e7eb;
+  width: 760px;
   border: 2px solid #d0de8d;
   border-radius: 50rem;
+  margin: 0 auto;
+
+  @media (max-width: 760px) {
+    width: 100%;
+  }
 }
 
 .progress-bar {
