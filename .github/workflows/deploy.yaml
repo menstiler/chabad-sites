@@ -18,8 +18,8 @@ jobs:
         with:
           args: --delete
         env:
-          AWS_S3_BUCKET: menstiler.com # replace with your bucket name
-          AWS_REGION: us-east-2 # your region
-          SOURCE_DIR: build # change to your build output (e.g. dist)
+          AWS_S3_BUCKET: menstiler.com # must match your bucket name
+          AWS_REGION: us-east-1 # update to your region
+          SOURCE_DIR: . # deploy everything from repo root
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
