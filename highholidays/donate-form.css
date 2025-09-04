@@ -522,3 +522,12 @@ body.mobile div#chabad_body_content {
     }
   }
 }
+
+div[title="print"] {
+  display: none;
+}
+
+.js-content div {
+  font-size: 18px !important;
+  font-family: var(--primary-font) !important;
+}
