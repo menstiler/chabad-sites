@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Node (skip if not JS app)
+      - name: Install Node (if using Node project)
         uses: actions/setup-node@v3
         with:
           node-version: "18"
@@ -23,12 +23,13 @@ jobs:
           npm install
           npm run build
 
-      - name: Deploy to S3
-        uses: aws-actions/s3-sync@v2
+      - name: Sync files to S3
+        uses: jakejarvis/s3-sync-action@master
         with:
-          bucket: menstiler-static-site # change to your bucket name
-          region: us-east-1 # your bucket region
-          source-dir: build # adjust to your build output folder (e.g. dist)
+          args: --delete
         env:
+          AWS_S3_BUCKET: menstiler.com # replace with your bucket name
+          AWS_REGION: us-east-2 # your region
+          SOURCE_DIR: build # change to your build output (e.g. dist)
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
