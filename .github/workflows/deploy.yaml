@@ -13,16 +13,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Node (if using Node project)
-        uses: actions/setup-node@v3
-        with:
-          node-version: "18"
-
-      - name: Build project
-        run: |
-          npm install
-          npm run build
-
       - name: Sync files to S3
         uses: jakejarvis/s3-sync-action@master
         with:
