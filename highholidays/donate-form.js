@@ -37,7 +37,7 @@ function getFromSheet() {
             }
 
             if (current && goal) {
-              const amountNumber = parseInt(current, 10);
+              const amountNumber = parseInt(current, 10) * 2;
               const goalNumber = parseInt(goal, 10);
               const percent = (amountNumber / goalNumber) * 100;
 
