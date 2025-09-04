@@ -81,8 +81,8 @@ function getFromSheet() {
                   $j(".ticker-track").webTicker({
                     speed: 50,
                     direction: "left",
-                    startEmpty: false,
-                    duplicate: false,
+                    startEmpty: true,
+                    duplicate: true,
                     hoverpause: false,
                   });
                 });
