@@ -29,6 +29,7 @@ async function sendToSheet() {
   }
 
   if (submissionId === localStorage.getItem("submissionId")) {
+    getFromSheet();
     return;
   }
 
