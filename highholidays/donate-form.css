@@ -527,7 +527,13 @@ div[title="print"] {
   display: none;
 }
 
-.js-content div {
-  font-size: 18px !important;
-  font-family: var(--primary-font) !important;
+.receipt-title {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: var(--primary-font);
+}
+
+.receipt-message {
+  font-size: 18px;
+  font-family: var(--primary-font);
 }
