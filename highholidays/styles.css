@@ -24,6 +24,8 @@
   background: transparent;
   color: black;
   font-weight: 500;
+  white-space: nowrap;
+  max-width: 90%;
 }
 
 .chabad_header {
