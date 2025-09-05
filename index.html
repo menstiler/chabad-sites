@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>menstiler</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        Web Development Solutions <br />
+        <br />Let us now how we can help
+      </div>
+      <form
+        id="contactForm"
+        autocomplete="off"
+        onsubmit="handleFormSubmit(event)"
+      >
+        <label for="name">Name:</label><br />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+        /><br />
+
+        <label for="email">Email:</label><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+        /><br />
+
+        <label for="phone">Phone: <span class="small">(Optional)</span></label
+        ><br />
+        <input
+          type="phone"
+          id="phone"
+          name="phone"
+          pattern="[0-9]{10}"
+          title="Phone number should be 10 digits, e.g., 123-456-7890"
+        /><br />
+
+        <label for="message">Please tell us more about your project:</label
+        ><br />
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          required
+        ></textarea
+        ><br />
+        <div
+          class="g-recaptcha"
+          data-sitekey="6Lc6p78rAAAAAC4K-37zosQxzgj9KSahrpEkHHxc"
+        ></div>
+        <div class="button-container">
+          <button
+            type="submit"
+            class="animated-button"
+          >
+            <span class="button-content">
+              <span class="button-text">Send</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="currentColor"
+              >
+                <path
+                  d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </form>
+      <div class="receipt">
+        <div class="big-bold">Thank you for reaching out!</div>
+        <br />
+        We'll get back to you as soon as possible.
+      </div>
+    </div>
+
+    <script>
+      // Replace with your email sending API endpoint
+      const EMAIL_API_URL =
+        "https://sxxvt5mwg7l3zhbscyoybu46gm0ohoby.lambda-url.us-east-2.on.aws/";
+
+      function handleFormSubmit(event) {
+        event.preventDefault();
+        const form = document.getElementById("contactForm");
+        const button = document.querySelector(
+          'button[type="submit"] .button-text'
+        );
+
+        const recaptchaToken = grecaptcha.getResponse();
+        if (!recaptchaToken) {
+          alert("Please complete the reCAPTCHA");
+          return;
+        }
+
+        button.textContent = "Sending...";
+
+        const formData = {
+          name: form.name.value,
+          email: form.email.value,
+          phone: form.phone.value,
+          message: form.message.value,
+          recaptchaToken,
+        };
+
+        fetch(EMAIL_API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        })
+          .then((response) => {
+            if (response.ok) {
+              form.reset();
+              document.getElementById("contactForm").classList.add("hide");
+              document.querySelector(".receipt").classList.add("show");
+              grecaptcha.reset();
+            } else {
+              button.textContent = "Send";
+              alert("Failed to send message. Please try again.");
+            }
+          })
+          .catch(() => {
+            button.textContent = "Send";
+            alert("Error sending message. Please try again later.");
+          });
+      }
+    </script>
+    <script
+      src="https://www.google.com/recaptcha/api.js"
+      async
+      defer
+    ></script>
+  </body>
+</html>
