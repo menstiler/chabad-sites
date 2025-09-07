@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chabad Community Center</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <co:template id="HeaderSection" name="header_section" title="Header Section" type="static" detached="true">
+	<script src="https://menstiler.github.io/buildingcampaign/script.js"></script>
+	<co:section
+      id="header"
+          title="Header"
+          name="Header"
+          actions="edit,delete"
+   >
+		<div class="sticky-top">
+			<div class="container">
+				<div class="header-content">
+					<div class="logo">
+						<co:editable
+                  id="logo-link"
+                  title="Logo Link"
+                  name="Logo Link"
+                  attribute="href"
+                  tag_only="true"
+                  actions="edit,delete"
+                >
+							<a href="/6968063"></a>
+							<co:editable
+                  id="logo"
+                  title="Logo"
+                  name="Logo"
+                  attribute="src"
+                  tag_only="true"
+                  actions="edit,delete"
+                >
+								<img src="https://chabadofislip.com/media/images/1329/wrrj13298572.png" />
+							</co:editable>
+						</div>
+						<div class="burger-menu" id="burger-menu">
+							<div class="burger-line"></div>
+							<div class="burger-line"></div>
+							<div class="burger-line"></div>
+						</div>
+					</div>
+					<!-- <nav id="nav-menu">
+						<co:editable
+                  id="nav"
+                  title="Navbar"
+                  name="Navbar"
+                  actions="edit,delete"
+                >
+							<ul>
+								<li>
+									<a href="#campaign">Campaign</a>
+								</li>
+								<li>
+									<a href="#timeline">Timeline</a>
+								</li>
+								<li>
+									<a href="#donations">Donations</a>
+								</li>
+								<li>
+									<a href="#contact">Contact</a>
+								</li>
+							</ul>
+						</co:editable>
+					</nav> -->
+					<co:template
+          class="chabad_navigator_bar"
+          id="Navigation"
+          name="nagivation"
+          title="Navigation Bar"
+          max_chars="300"
+        ></co:template>
+				</div>
+			</div>
+		</co:section>
+	</co:template>
+	<co:template title="Content Area" name="content_area" id="ContentArea" type="static" detached="true" >
+			
+
+<co:section
+      id="hero-content"
+          title="Hero Content"
+          name="Hero Content"
+          actions="edit,delete"
+   >
+				<div class="hero">
+					<div class="hero-bg">
+						<div class="red-bg"></div>
+						<div class="container">
+							<div class="hero-content">
+								<h2 class="header-font ">
+									<co:editable
+                  id="title"
+                  title="Title"
+                  name="Title"
+                  actions="edit,delete"
+                >The New South Shore Campus for Jewish Life!</co:editable>
+								</h2>
+								<co:editable
+                  id="text"
+                  title="Text"
+                  name="Text"
+                  actions="edit,delete"
+                >
+									<p>We invite you to be part of the future - building a vibrant and welcoming Jewish community center filled with love, warmth, and wisdom, for all.</p>
+								</co:editable>
+							</div>
+						</div>
+					</div>
+					<div class="hero-clip">
+						<co:editable
+                  id="video"
+                  title="Video Link"
+                  name="Video Link"
+                  tag_only="true"
+                  attribute="src"
+                  actions="edit,delete"
+                >
+							<video playsinline autoplay muted loop src="https://css-tricks-post-videos.s3.us-east-1.amazonaws.com/blurry-trees.mov" id="bgvid"></video>
+						</co:editable>
+					</div>
+				</div>
+			</co:section>
+<co:section
+          id="progress-bar"
+          title="Progress Bar"
+          name="Progress Bar"
+          actions="edit,delete"
+        >
+				<div class="hero-campaign-info">
+					<div class="campaign-progress">
+						<div class="campaing-info">
+							<co:editable
+                  id="title"
+                  title="Amount Raised"
+                  name="Amount Raised"
+                  actions="edit"
+                >
+								<h4>$1,400,000 RAISED
+								</co:editable>
+							</h4>
+							<co:editable
+                  id="title"
+                  title="Goal"
+                  name="Goal"
+                  actions="edit"
+                >
+								<h4>GOAL: $5,000,000</h4>
+							</co:editable>
+						</div>
+						<div class="progress-bar-container">
+							<div class="progress-bar">
+								<span class="percent"></span>
+							</div>
+						</div>
+					</div>
+					<div class="campaign-progress-cta">
+						<co:section
+          id="button"
+          title="Button"
+          name="Button"
+          actions="edit,delete"
+        >
+							<co:editable
+                  id="link-donate"
+                  title="Link"
+                  name="Link"
+                  tag_only="true" 
+                  attribute="href"            
+                  actions="edit"
+                >
+								<a href="#donations"></a>
+							</co:editable>
+							<co:editable
+                  id="title"
+                  title="Text"
+                  name="Text"
+                  actions="edit"
+                >Donate Now</co:editable>
+						</co:section>
+					</div>
+				</div>
+			</co:section>
+			<!-- Campaign div -->
+			<co:section
+              title="Campaign"
+              actions="edit,delete"
+              name="Campaign"
+              id="campaign"
+            >
+				<div class="campaign" id="campaign">
+					<div class="container">
+						<div class="campaign-grid">
+							<div class="campaign-content">
+								<div class="campaign-header">
+									<h3 class="uppercase">
+										<co:editable
+                  id="title"
+                  title="Heading"
+                  name="Heading"
+                  actions="edit,delete"
+                >Campaign</co:editable>
+									</h3>
+									<h2>
+										<co:editable
+                  id="title"
+                  title="Title"
+                  name="Title"
+                  actions="edit,delete"
+                >From Home 
+											<em class="italic">to</em>
+											<span>Campus!</span>
+										</co:editable>
+									</h2>
+								</div>
+								<co:editable
+                  id="text"
+                  title="Text"
+                  name="Text"
+                  actions="edit,delete"
+                >
+									<p>In 2023 we embarked on an ambitious journey to establish a permanent home for the Jewish community on the South Shore. Our recently acquired large estate home is already bustling with Chabad House programs and activities, demonstrating its immediate impact. Now, we're ready for the next phase: transforming this beautiful property into a full-fledged, state-of-the-art Campus for Jewish Life, that will serve as the heart of Jewish life for our growing community.</p>
+								</co:editable>
+								<!-- <div id="learn-more-btn" class="btn">+ Our Programs</div> -->
+							</div>
+							<div class="campaign-image">
+								<co:editable
+                  id="image"
+                  title="Image"
+                  name="Image"
+                  tag_only="true"
+                  attribute="src"
+                  actions="edit,delete"
+                >
+									<img src="https://placeholder.svg?height=400&width=600&query=community+center+interior" alt="Interior rendering of the community center">
+									</co:editable>
+								</div>
+							</div>
+						</div>
+					</div>
+				</co:section>
+				<!-- Expandable Information div -->
+				<!-- <div id="expandable-info" class="expandable-div"><div class="container"><div class="info-boxes"><div class="info-grid"><div class="info-box"><div class="info-box-icon synagogue"></div><h3>Synagogue</h3><ul style="list-style: none; padding-left: 0;"><li>• Shabbat & Holiday Services
+              <li>• Yizkor Memorial Services</li><li>• Lifecycle Services</li></ul></div><div class="info-box"><div class="info-box-icon programs"></div><h3>Programs & Services</h3><ul style="list-style: none; padding-left: 0;"><li>• Cultural and educational classes</li><li>• Holiday celebrations and festivals</li><li>• Youth and teen programs</li></ul></div><div class="info-box"><div class="info-box-icon outreach"></div><h3>Outreach</h3><ul style="list-style: none; padding-left: 0;"><li>• Matzah Campaign</li><li>• Chanukah Campaign</li><li>• Public Menorah Lightings</li></ul></div><div class="info-box"><div class="info-box-icon families"></div><h3>Families</h3><ul style="list-style: none; padding-left: 0;"><li>• Hebrew School</li><li>• Bar / Bat Mitzvas</li><li>• Family Holiday Education and Celebrations</li></ul></div><div class="info-box"><div class="info-box-icon social-services"></div><h3>Social Services</h3><ul style="list-style: none; padding-left: 0;"><li>• Crisis Intervention & Counseling</li><li>• Food Package Distribution</li><li>• Hospital Visitation</li></ul></div><div class="info-box"><div class="info-box-icon women"></div><h3>Women</h3><ul style="list-style: none; padding-left: 0;"><li>• Torah and Tea</li><li>• Jewish Women's Circle</li></ul></div></div></div></div></div> -->
+				<!-- Timeline div -->
+				<co:section
+              title="Timeline"
+              actions="edit,delete"
+              name="Timeline"
+              id="timeline"
+            >
+					<div class="timeline" id="timeline">
+						<div class="container">
+							<div class="timeline-header">
+								<h3 class="uppercase">
+									<co:editable
+                  id="title"
+                  title="Heading"
+                  name="Heading"
+                  actions="edit,delete"
+                >Timeline of Progress</co:editable>
+								</h3>
+								<h2>
+									<co:editable
+                  id="title"
+                  title="Title"
+                  name="Title"
+                  actions="edit,delete"
+                >The Journey From Vision to Reality</co:editable>
+								</h2>
+							</div>
+							<!-- Year Bar -->
+							<div class="year-bar-container">
+								<div class="year-bar" id="year-bar">
+									<div class="year-item active" data-year="2013">
+										<div class="year-bg">
+											<img src="https://w2.chabad.org/media/images/1329/nXBy13295438.jpg" />
+										</div>
+										<div class="year-number">2013</div>
+										<div class="year-description">Founding of Chabad of Islip</div>
+									</div>
+									<div class="year-item" data-year="2014">
+										<div class="year-bg">
+											<img src="https://w2.chabad.org/media/images/1329/jXrN13295440.jpg" />
+										</div>
+										<div class="year-number">2014</div>
+										<div class="year-description">First High Holidays & Chaunkah on Main Street</div>
+									</div>
+									<div class="year-item" data-year="2015">
+										<div class="year-bg">
+											<img src="https://w2.chabad.org/media/images/1329/Fsjt13295444.jpg" />
+										</div>
+										<div class="year-number">2015</div>
+										<div class="year-description">First Jewish Women's Circle Gala</div>
+									</div>
+									<div class="year-item" data-year="2017">
+										<div class="year-bg">
+											<img src="https://w2.chabad.org/media/images/1329/tPTD13295442.jpg" />
+										</div>
+										<div class="year-number">2017</div>
+										<div class="year-description">Programming moves to Bay Shore American Legion</div>
+									</div>
+									<div class="year-item" data-year="2020">
+										<div class="year-bg">
+											<img src="https://w2.chabad.org/media/images/1329/nXBy13295438.jpg" />
+										</div>
+										<div class="year-number">2020</div>
+										<div class="year-description">Weekly Shabbat Services at 49 Union Ave</div>
+									</div>
+									<div class="year-item" data-year="2021">
+										<div class="year-bg">
+											<img src="https://w2.chabad.org/media/images/1329/nXBy13295438.jpg" />
+										</div>
+										<div class="year-number">2021</div>
+										<div class="year-description">Islip Community Torah Dedication</div>
+									</div>
+									<div class="year-item" data-year="2022">
+										<div class="year-bg">
+											<img src="https://w2.chabad.org/media/images/1329/OmBr13295446.jpg" />
+										</div>
+										<div class="year-number">2022</div>
+										<div class="year-description">Founding of JUDA Hebrew School</div>
+									</div>
+									<div class="year-item" data-year="2023">
+										<div class="year-bg">
+											<img src="https://w2.chabad.org/media/images/1329/nXBy13295438.jpg" />
+										</div>
+										<div class="year-number">2023</div>
+										<div class="year-description">Purchase of new property & opening</div>
+									</div>
+									<div class="year-item" data-year="2025">
+										<div class="year-bg">
+											<img src="https://w2.chabad.org/media/images/1329/nXBy13295438.jpg" />
+										</div>
+										<div class="year-number">2025</div>
+										<div class="year-description">Launch of campaign from home to campus!</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</co:section>
+<co:section
+              title="Campaign Info"
+              actions="edit,delete"
+              name="Campaign Info"
+              id="campaign-info"
+            >
+					<div class="campaign-content-div" id="campaign-details">
+						<div class="container">
+							<div class="campaign-content-container">
+								<!-- <div class="campaign-logo"></div> -->
+								<h2>
+									<co:editable
+                  id="title"
+                  title="Title"
+                  name="Title"
+                  actions="edit,delete"
+                >A Vision for the Future</co:editable>
+								</h2>
+								<div class="section section-hero">
+									<div class="container campaign-center" >
+										<co:editable
+                  id="image"
+                  title="Image"
+                  name="Image"
+                  tag_only="true"
+                  attribute="src"
+                  actions="edit,delete">
+											<img src="https://www.chabadberkshires.org/wp-content/uploads/2021/08/Chabad-Berkshire-County-20547-Capital-Campaign-Website-Highlights.gif" style="object-fit: cover; width: 760px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
+											</co:editable>
+											<div class="col-12 col-md-4" style="background-color: #bd4065;display:flex; justify-content:center; align-items:center;">
+												<div style="color: #bdb78f;margin:40px;" class="align-center">
+													<co:editable
+                  id="text"
+                  title="Text"
+                  name="Text"
+                  actions="edit,delete">
+														<p class="header-font" style="color:#bdb78f;">New Campus Highlights</p>
+														<div style="background-color:#bdb78f; height:5px; min-width: 40px;margin: 10px auto; max-width: 60%;"></div>
+														<p class="align-center">Beautiful Large Social hall for lifecycle celebrations
+															<br>
+              Expanded Sanctuary - tripling capacity
+																<br>
+              New state of the are Preschool & Childcare center!
+																	<br>
+              Modern Hebrew School classrooms
+																		<br>
+              Beautiful Women's Circle Lounge
+																			<br>
+              1st Mikvah in Islip
+																				<br>
+            Expansive outdoor play area
+																					<br>
+            New Parking Lot
+																					</p>
+																					<br>
+																					</co:editable>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</co:section>
+                          <co:section
+          id="progress-bar-2"
+          title="Progress Bar 2"
+          name="Progress Bar 2"
+          actions="delete"
+        >
+														<div class="campaign-progress">
+															<h4>$1,400,000 RAISED OF $5,000,000 GOAL</h4>
+															<div class="progress-bar-container">
+																<div class="progress-bar">
+																	<span class="percent"></span>
+																</div>
+															</div>
+														</div>
+													</co:section>
+
+				<!-- Testimonials Section -->
+				<!-- <div class="testimonials" id="testimonials"><div class="container"><div class="testimonials-container"><button class="nav-arrow" id="prev-testimonial">‹</button><button class="nav-arrow" id="next-testimonial">›</button><div class="testimonial-slider" id="testimonial-slider"><div class="testimonial-item active"><div class="testimonial-quote">
+              The Chabad Community Center has become the heart of our neighborhood. The programs for our children are exceptional, and the sense of belonging we feel here is truly special. This campaign will ensure future generations have this wonderful home.
+            </div><div class="testimonial-author"><div class="author-image" style="background-image: url('https://placeholder.svg?height=60&width=60&query=sarah+johnson+portrait')"></div><div class="author-info"><h4>Sarah Johnson</h4><div class="author-role">Community Member</div></div></div></div><div class="testimonial-item"><div class="testimonial-quote">
+              As a longtime resident of Oakville, I've watched this community grow and flourish. The dedication of the leadership and the warmth of the members make this place truly unique. I'm proud to support this important campaign.
+            </div><div class="testimonial-author"><div class="author-image" style="background-image: url('https://placeholder.svg?height=60&width=60&query=michael+cohen+portrait')"></div><div class="author-info"><h4>Michael Cohen</h4><div class="author-role">Board Member</div></div></div></div></div><div class="testimonial-nav"><div class="testimonial-dots" id="testimonial-dots"><div class="dot active" data-index="0"></div><div class="dot" data-index="1"></div><div class="dot" data-index="2"></div><div class="dot" data-index="3"></div><div class="dot" data-index="4"></div></div></div></div></div></div> -->
+				
+													
+										
+											<div class="container" id="donations">
+                        <co:section
+          id="dedications"
+          name="Dedications"
+          title="Dedications"
+          actions="edit,delete"
+        >
+												<h2>
+													<co:editable
+                  id="title"
+                  title="Title"
+                  name="Title"
+                  actions="edit,delete"
+                >Building Dedications</co:editable>
+												</h2>
+												<div class="dedication-list" id="dedication-list">
+													<co:editable
+                  id="dedications"
+                  title="Dedications"
+                  name="Dedications"
+                  actions="edit,delete"
+                >
+														<table border="1" cellpadding="2" cellspacing="0" dir="ltr" id="dedications" style="border-collapse: collapse;" width="100%">
+															<tbody>
+																<tr>
+																	<td>&nbsp;Dedication</td>
+																	<td>&nbsp;Price</td>
+																	<td>&nbsp;Reserved</td>
+																	<td>Category</td>
+																</tr>
+																<tr>
+																	<td>Campus Naming & Dedication</td>
+																	<td>$1,800,000</td>
+																	<td>no</td>
+																	<td>Naming Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Building Naming</td>
+																	<td></td>
+																	<td>yes</td>
+																	<td>Naming Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Social Hall Naming & Dedication</td>
+																	<td>$750,000</td>
+																	<td>no</td>
+																	<td>Naming Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Sanctuary Naming & Dedication</td>
+																	<td>$500,000</td>
+																	<td>&nbsp;</td>
+																	<td>Naming Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Mikvah Naming & Dedication</td>
+																	<td>$360,000</td>
+																	<td>&nbsp;</td>
+																	<td>Naming Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Pre School Naming & Dedication</td>
+																	<td>$250,000</td>
+																	<td>&nbsp;</td>
+																	<td>Naming Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Hebrew School Naming</td>
+																	<td></td>
+																	<td>yes</td>
+																	<td>Naming Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Women's Circle Lounge Naming</td>
+																	<td>$180,000</td>
+																	<td></td>
+																	<td>Naming Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Lobby Naming and Dedication</td>
+																	<td>$150,000</td>
+																	<td></td>
+																	<td>Naming Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Torah Ark - Aron Kodesh</td>
+																	<td>$100,000</td>
+																	<td></td>
+																	<td>Dedication Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Zeldy's Kitchen</td>
+																	<td>$100,000</td>
+																	<td></td>
+																	<td>Dedication Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Expanded Children's Playground</td>
+																	<td>$90,000</td>
+																	<td></td>
+																	<td>Dedication Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Sukkah Patio</td>
+																	<td>$90,000</td>
+																	<td></td>
+																	<td>Dedication Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Serenity Garden</td>
+																	<td>$72,000</td>
+																	<td></td>
+																	<td>Dedication Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Oct 7th Life Memorial</td>
+																	<td>$72,000</td>
+																	<td></td>
+																	<td>Dedication Opportunities</td>
+																</tr>
+																<tr>
+																	<td>PreSchool Classroom</td>
+																	<td>$54,000</td>
+																	<td></td>
+																	<td>Dedication Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Hebrew School Classroom</td>
+																	<td>$54,000</td>
+																	<td></td>
+																	<td>Dedication Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Hospitality Suite</td>
+																	<td>$54,000</td>
+																	<td></td>
+																	<td>Dedication Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Basketball Court</td>
+																	<td>$50,000</td>
+																	<td></td>
+																	<td>Dedication Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Rabbi's Study</td>
+																	<td></td>
+																	<td>yes</td>
+																	<td>Dedication Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Bima</td>
+																	<td>$36,000</td>
+																	<td></td>
+																	<td>Dedication Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Pickleball Court</td>
+																	<td>$36,000</td>
+																	<td></td>
+																	<td>Dedication Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Washing Station</td>
+																	<td>$25,000</td>
+																	<td></td>
+																	<td>Dedication Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Chazzan Podium</td>
+																	<td></td>
+																	<td>yes</td>
+																	<td>Dedication Opportunities</td>
+																</tr>
+																<tr>
+																	<td>Coat Room</td>
+																	<td>$18,000</td>
+																	<td></td>
+																	<td>Dedication Opportunities</td>
+																</tr>
+															</tbody>
+														</table>
+													</co:editable>  
+                          </div>
+                          </co:section>                      
+                        <div class="more-options">
+                          <co:section
+        id="button"
+        title="Button"
+        name="Button"
+        actions="edit,delete"
+        >
+                            <button id="more-options" style="margin-top: 20px;">
+                              <co:editable
+            id="header-link"
+            title="Link"
+            name="Link"
+            tag_only="true" 
+            attribute="href" 
+            actions="edit,delete"
+          >
+                                <a href="#"></a>
+                              </co:editable>
+                              <co:editable
+                    id="title"
+                    title="Text"
+                    name="Text"
+                    actions="edit,delete"
+                  >Explore More Options</co:editable>
+                            </button>
+                          </co:section>
+                        </div>
+                        <co:section
+                            id="general-donations"
+                            title="General Donations"
+                            name="General Donations"
+                            actions="edit,delete"
+                          >
+                          <div id="donation-options">
+                            <div class="dedication-category" style="margin-top: 1rem;">
+                              <h4>
+                                <co:editable
+                                  id="title"
+                                  title="Title"
+                                  name="Title"
+                                  actions="edit,delete"
+                                >General Donations</co:editable>
+                              </h4>
+                            </div>
+                          </div>
+                          <div id="amount-buttons">
+                            <button class="amount-btn" data-amount="1800">$1,800</button>
+                            <button class="amount-btn" data-amount="720">$720</button>
+                            <button class="amount-btn" data-amount="540">$540</button>
+                            <button class="amount-btn" data-amount="360">$360</button>
+                            <button class="amount-btn" data-amount="180">$180</button>
+                            <button class="amount-btn" data-amount="other">Other</button>
+                          </div>
+                          <div id="other-input" style="display: none; margin-top: 10px;">
+                            <input type="number" id="other-amount" placeholder="Enter your amount" />
+                          </div>
+                          <div class="donate-now-container">
+                            <button id="donate-now" style="margin-top: 20px;">Donate</button>
+                          </div>
+                        </co:section>											
+												</div>
+											
+
+<co:section
+  id="contact_form"
+  title="Contact Us"
+  name="Contact Us"
+  actions="edit,delete"
+>
+<div id="contact" class="contact-form">
+  <h2>
+    <co:editable
+      id="title"
+      title="Title"
+      name="Title"
+      actions="edit,delete"
+      >Contact Us</co:editable>
+  </h2>
+  <form autocomplete="off" action="/templates/articlecco.asp?aid=6968130" method="post" id="form1" onsubmit="return Co.Forms.Validation.Validate(this);" novalidate="true">
+    <input type="hidden" name="site" value="" >
+      <input type="hidden" name="sc" value="">
+        <co:body
+          xmlns:co="www1.chabadonline.com/alpha1"
+          xmlns:ext="urn:xslt-extensions">
+          <div class="co_body article-body cf">
+            <div id="formBody">
+              <div class="contact-row">
+                <input type="text" name="First Name" placeholder="First Name" tabindex="1" required="false" class=" active">
+                  <input type="text" name="Last Name" placeholder="Last Name" tabindex="1" required="false" class=" active">
+                  </div>
+                  <div data-lastpass-icon-root="" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div>
+                </p>
+                <div data-lastpass-icon-root="" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">&nbsp;</div>
+                <input type="text" name="Email" placeholder="Email" tabindex="1" required="false" class=" active">
+                  <textarea rows="5" type="text" name="Message" placeholder="Message" tabindex="1" required="false" class="active"></textarea>
+                </div>
+              </div>
+            </co:body>
+            <div class="break_floats"></div>
+            <div class="clearfix">
+              <script>
+                  var recaptchaIsEnterprise = false;
+                  var recaptchaV2Key = "6LcG_TcUAAAAAKAVgwgW39ujc9OCjXSoQYFIA-Su";                                  
+              </script>
+              <input type="hidden" class="js-recaptcha-input" name="cdo-captcha-response" value="" data-div-id="aa8b9f8c-fc59-4a59-9cd6-68d3089944e0" data-processed="false" />
+              <div class="js-recaptcha-wrapper" id="aa8b9f8c-fc59-4a59-9cd6-68d3089944e0"></div>
+            </div>
+            <div class="ccoFormFooter">
+              <div class="small bold center bottom_padding">
+                <div class="grey f-small"></div>
+              </div>
+              <div align="center">
+                <input type="submit" value="Submit" name="SubmitCCO" tabindex="1000">
+                  <p align="center" style="font-size: 8pt; color: #666666; font-family: Verdana, Helvetica; margin-bottom: 3px; margin-top: 6px;">
+                    <img valign="absbottom" src="https://w2.chabad.org/images/global/icons/lock.gif" width="16" height="16" alt="Secure">
+          This page uses 128 bit SSL encryption to keep your data secure.
+      
+                    </p>
+                  </div>
+                  <input type="hidden" name="FormCCOSubmited" value="true">
+                  </form>
+                </div>
+              </co:section>
+              </co:template>
+
+
+<script type="module" src="script.js"></script> 
+
+</body>
+</html>

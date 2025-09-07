@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chabad Community Center</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+    
+    <co:template id="HeaderSection" name="header_section" title="Header Section" type="static" detached="true">
+      <script  type="module" src="https://master.d36mxlltrtft80.amplifyapp.com/hebrewschool/script.js"></script> 
+      <co:section
+          id="ContentHeading"
+          name="content_heading"
+          title="Content Heading"
+          actions="edit"
+        >
+<div id="chabad_head">
+  <div class="header-bg">
+    <div class="sticky-top">
+    <div class="container">
+      <div class="header-content">        
+       <div class="burger-menu" id="burger-menu">
+          <div class="burger-line"></div>
+          <div class="burger-line"></div>
+          <div class="burger-line"></div>
+        </div>
+      </div>
+            <co:template
+          class="chabad_navigator_bar"
+          id="Navigation"
+          name="nagivation"
+          title="Navigation Bar"
+          max_chars="300"
+        ></co:template>
+    </div>
+    <div class="logo">
+      <h2><a href="/6988383">
+        <co:editable
+                  id="image"
+                  title="Image"
+                  name="Image"
+                  tag_only="true"
+                  attribute="src"
+                  actions="edit,delete"
+                >
+        <img src="//img1.wsimg.com/isteam/ip/e2d49e33-cd79-41de-bfaf-e4f8c2c5e8d0/2024-2025%20(1).svg/:/rs=h:200,cg:true,m/qt=q:95"  alt="JUDA" />
+      </co:editable>
+      </a></h2>
+      </div>
+</div>
+<div class="header-inner-container">
+    <div class="header-title">
+      <h1><co:editable
+                  id="title"
+                  title="Title"
+                  name="Title"
+                  actions="edit,delete"
+                >Inspiring Jewish Pride and Identity in Jewish Children - the future of Judaism.</co:editable></h1>
+      <h4><co:editable
+                  id="subtitle"
+                  title="Subtitle"
+                  name="Subtitle"
+                  actions="edit,delete"
+                >Chabad of Islip Township</co:editable></h4>
+    </div>
+    <div class="button-container">
+      <co:editable
+                  id="header-link"
+                  title="Link"
+                  name="Link"
+                  actions="edit,delete"
+                ><a href="/6988446"></a></co:editable>
+      <co:editable
+                  id="header-button-text"
+                  title="Button Text"
+                  name="Button Text"
+                  actions="edit,delete"
+                >
+        View Our Calander</co:editable>
+    </div>
+</div>
+</div>
+</div>
+</co:section>
+</co:template>
+<div id="chabad_main_content">
+<co:template title="Content Area" name="content_area" id="ContentArea" type="static" detached="true" >
+<div class="scroll-container">
+   <co:section
+              title="Text Section"
+              actions="delete"
+              name="Text Section"
+              id="text_section"
+            >
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <!-- <h2 class="header-font "> Inspiring Jewish Pride and Identity in Jewish Children - the future of Judaism.</h2> -->
+        <!-- <div class="hero-image">
+            <img data-ux="Image" src="//img1.wsimg.com/isteam/ip/e2d49e33-cd79-41de-bfaf-e4f8c2c5e8d0/19-6af1a0b.png/:/cr=t:18.04%25,l:0%25,w:100%25,h:50%25/rs=w:1240,h:620,cg:true" overlayalpha="0" data-aid="ABOUT_IMAGE_RENDERED0" class="x-el x-el-img c1-1 c1-2 c1-4 c1-36 c1-3d c1-3e c1-20 c1-22 c1-3f c1-9u c1-3k c1-b c1-c c1-d c1-e c1-f c1-g">
+        </div> -->
+        <div class="hero-text">
+           <co:editable
+                id="text"
+                title="Text"
+                name="Text"
+                actions="edit,delete"
+                >
+            <p>JUDA offers a stimulating and friendly environment where children can embrace their Jewish roots and gain a true sense of Jewish pride, regardless of their level of observance or affiliation. Our students acquire a broad knowledge of Judaism through an empowering program, gaining an appreciation for the joys, values, and traditions of our heritage
+</p></co:editable>
+        </div>
+      </div>       
+    </div>
+  </div>
+   </co:section>
+
+   <co:section
+              title="Program Section"
+              actions="edit,delete"
+              name="Program Section"
+              id="program_section"
+            >
+  <div class="split-section">
+    <co:section
+              title="Section 1"
+              actions="delete"
+              name="Section 1"
+              id="program_section_1"
+              actions="edit,delete"
+            >
+    <div class="section split-section-bg bg-start">
+        <div class="section-header">
+            <co:editable
+                      id="title"
+                      title="Title"
+                      name="Title"
+                      actions="edit,delete"
+                      >Our Mission</co:editable>
+        </div>
+        <div class="section-text">
+          <co:editable
+                      id="text"
+                      title="Text"
+                      name="Text"
+                      actions="edit,delete"
+                      >
+            <p>
+            Our goal at JUDA is simple: We want our students to view Judaism in an intelligent, relevant and upbeat light. By year's end, along with the Aleph-Bet, Holiday learning and Hebrew literacy, your child will have developed a deep love and appreciation for their precious heritage, imbuing their every day with a sense of pride and purpose.
+            </p>
+            <p>
+            Our program is founded on the principle that, while Jews embrace many levels of observance in their personal lives, there should be a place for all Jews to develop a sense of community and engage in activities which will enhance their Jewish experience.
+            </p>
+            <p>
+            Join the club!
+            </p></co:editable>
+        </div>
+        <div  class="button-container">
+          <co:editable id="link" title="Link" tag_only="true" attribute="href" name="Link" actions="edit">
+            <a href="/6988444">Learn more</a></co:editable>
+        </div>
+    </div>
+    </co:section>
+    <co:section
+              title="Section 2"
+              actions="delete"
+              name="Section 2"
+              id="program_section_2"
+              actions="edit,delete"
+            >
+        <div class="section split-section-bg bg-center">
+            <div class="section-header">
+            <co:editable
+                      id="title"
+                      title="Title"
+                      name="Title"
+                      actions="edit,delete"
+                      >Our Philosophy</co:editable>
+        </div>
+        <div class="section-text">
+          <co:editable
+                      id="text"
+                      title="Text"
+                      name="Text"
+                      actions="edit,delete"
+                      >
+            <p>
+            At JUDA, we believe that children learn best through interactive experiences, hands-on discoveries, and small groups.
+            </p>
+            <p>
+            Children experience the ideas and ideals which are taught in a tangible and artistic manner, through crafts, drama, outdoor adventures, and more.
+            </p>
+            <p>
+            Judaism underscores the uniqueness of every child with the axiom “Teach a child according to their disposition,” instructing us to guide children according to their individual paths.
+            </p></co:editable>
+        </div>
+        <div  class="button-container">
+          <co:editable id="link" title="Link" tag_only="true" attribute="href" name="Link" actions="edit">
+            <a href="/6988444#Curriculum">Explore curriculum </a></co:editable>
+        </div>
+    </div>
+      </co:section>
+    <co:section
+              title="Section 3"
+              actions="delete"
+              name="Section 3"
+              id="program_section_3"
+              actions="edit,delete"
+            >
+        <div class="section split-section-bg bg-end">
+        <div class="section-header">
+            <co:editable
+                      id="title"
+                      title="Title"
+                      name="Title"
+                      actions="edit,delete"
+                      >Our Programs</co:editable>
+        </div>  
+        <div class="section-text">
+          <co:editable
+                      id="text"
+                      title="Text"
+                      name="Text"
+                      actions="edit,delete"
+                      >
+            <p>
+            Children from ages 5-13 acquire a broad knowledge of Judaism through a motivating and challenging venue. Our students gain an appreciation for the joys, values and traditions of our heritage as it is vividly brought to life by the dedicated and enthusiastic teachers whose creativity and dynamism make every lesson a unique learning experience.
+            </p>
+            <p>
+            Our hands-on approach and creative activities ensure that we don't just learn but we have fun doing it! 
+            </p>
+            <p>
+            Here at JUDA, they have the opportunity to meet and make friends with local Jewish kids, and are encouraged to have fun, ask questions, and be an active participant in their Jewish journey.
+            </p></co:editable>
+        </div>
+        <div  class="button-container">
+                    <co:editable id="link" title="Link" tag_only="true" attribute="href" name="Link" actions="edit">
+            <a href="/6988445">Explore Programs</a></co:editable>
+        </div>         
+    </div>
+    </co:section>
+  </div></co:section>
+   <co:section
+              title="Register Section"
+              actions="delete"
+              name="Register Section"
+              id="register_section"
+            >
+  <div class="register-container">
+    <div class="image-container">
+      <co:editable
+                    id="image"
+                    title="Image"
+                    name="Image"
+                    tag_only="true"
+                    attribute="src"
+                    actions="edit,delete"
+                  >
+        <img data-ux="Image" src="//img1.wsimg.com/isteam/stock/u5lW5kAABGFRlPw9G/:/" data-aid="IMAGE_RENDERED" class="x-el x-el-img c1-1 c1-2 c1-4 c1-36 c1-3d c1-3e c1-20 c1-22 c1-3f c1-d6 c1-b c1-c c1-d c1-e c1-f c1-g" srcset="">
+        </co:editable>
+      </div>
+    <div class="text-container">
+        <h4><co:editable
+                      id="title"
+                      title="Title"
+                      name="Title"
+                      actions="edit,delete"
+                      >Registration</co:editable></h4>
+        <co:editable
+                      id="text"
+                      title="Text"
+                      name="Text"
+                      actions="edit,delete"
+                      ><p>Conveniently register for your JUDA Hebrew School online!</p></co:editable>
+        <div class="button-container">
+          <co:editable id="link" title="Link" tag_only="true" attribute="href" name="Link" actions="edit">
+            <a href="/6988448">Register now</a></co:editable>
+        </div>
+    </div>
+
+  </div>
+  </co:section>
+  <co:section
+              title="Contact Us"
+              actions="delete"
+              name="contact_form"
+              id="contact_form"
+            >
+<div id="contact" class="contact-form">
+    <div class="contact-form-title-container">
+      <h2><co:editable
+                  id="title"
+                  title="Title"
+                  name="Title"
+                  actions="edit,delete"
+                  >Contact Us</co:editable></h2>
+      <div class="divider-line"></div>
+    </div>
+    <div class="contact-form-image-container">
+    
+    <div class="contact-form-inner-container">
+
+      <div class="contact-content-container">
+        <div class="contact-text-content" id="contactTextContent">
+          <h6><co:editable
+                  id="subtitle"
+                  title="Subtitle"
+                  name="Subtitle"
+                  actions="edit,delete"
+                  >Are you ready to get started?</co:editable></h6>
+          <co:editable
+                  id="text"
+                  title="Text"
+                  name="Text"
+                  actions="edit,delete"
+                  ><p>If you have questions about the opportunities available in our programs, feel free to send us a message. We will get back to you as soon as possible.</p></co:editable>
+          <div class="button-container">
+            <a id="showContact">Get in touch!</a>
+          </div>
+        </div>
+
+        <div class="contact-form-container" id="contactFormContainer">
+          
+          <form autocomplete="off" action="/templates/articlecco.asp?aid=6989269" method="post" id="form1" onsubmit="return Co.Forms.Validation.Validate(this);" novalidate="true">
+            <input type="hidden" name="site" value="" >
+            <input type="hidden" name="sc" value="">
+            
+                    <co:body xmlns:co="www1.chabadonline.com/alpha1" xmlns:ext="urn:xslt-extensions">
+        <div class="co_body article-body cf">
+    <div id="formBody">
+        <div class="contact-row">
+            <input type="text" name="First Name" placeholder="First Name" tabindex="1" required="true" class=" active">
+            <input type="text" name="Last Name" placeholder="Last Name" tabindex="1" required="true" class=" active">
+        </div>
+    <input type="text" name="Email" placeholder="Email" tabindex="1" required="true" class=" active">
+    <textarea rows="5" type="text" name="Message" placeholder="Message" tabindex="1" required="true" class="active"></textarea>
+        </div>
+    </div>
+    </co:body>
+                <div class="break_floats"></div>
+                
+                        <div class="clearfix">
+                            
+    
+    
+    <script>
+        var recaptchaIsEnterprise = false;
+            var recaptchaV2Key = "6LcG_TcUAAAAAKAVgwgW39ujc9OCjXSoQYFIA-Su";
+    
+    </script>
+    
+        <input type="hidden" class="js-recaptcha-input" name="cdo-captcha-response" value="" data-div-id="aa8b9f8c-fc59-4a59-9cd6-68d3089944e0" data-processed="false" />
+        <div class="js-recaptcha-wrapper" id="aa8b9f8c-fc59-4a59-9cd6-68d3089944e0"></div>	
+    
+                        </div>
+                    
+                        <div class="ccoFormFooter">
+                            
+                                <div class="small bold center bottom_padding">
+                                    <div class="grey f-small"></div></div>
+                            
+                            <div align="center">
+                                <div class="actions-container">
+                                    <input type="submit" value="Submit" name="SubmitCCO" tabindex="1000">
+                                    <a id="hideContact">Cancel</a>
+                                </div>
+                                <p align="center" style="font-size: 8pt; color: #666666; font-family: Verdana, Helvetica; margin-bottom: 3px; margin-top: 6px;">
+                                    <img valign="absbottom" src="https://w2.chabad.org/images/global/icons/lock.gif" width="16" height="16" alt="Secure">
+                                    This page uses 128 bit SSL encryption to keep your data secure.
+                                </p>
+                            
+                        </div>
+                    
+                    <input type="hidden" name="FormCCOSubmited" value="true">
+                </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+      <div class="contact-image">
+        <co:editable
+                    id="image"
+                    title="Image"
+                    name="Image"
+                    tag_only="true"
+                    attribute="src"
+                    actions="edit,delete"
+                  >
+        <img src="https://chabadofislip.com/media/images/1329/OmBr13295446.jpg" 
+             alt="Contact Us" /></co:editable>
+      </div>
+      </div></co:section></div>        
+</div>
+</co:template>
+</div>
+
+</body>
+</html>
+
