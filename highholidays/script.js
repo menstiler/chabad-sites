@@ -1,5 +1,5 @@
 const url =
-  "https://nrdt34mn5c.execute-api.us-east-2.amazonaws.com/?id=1DwHmQF6J60S126sWqG_-kpxpRcgO4201IjHgAqGeHdU";
+  "https://api.menstiler.com/?id=1DwHmQF6J60S126sWqG_-kpxpRcgO4201IjHgAqGeHdU";
 
 const PAGE_SCRIPTS = [
   {
