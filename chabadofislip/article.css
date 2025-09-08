@@ -8,7 +8,24 @@ body:not(.cco_templateless_page) .body_wrapper.clearfix.co_body {
   width: 100%;
   margin: 0 auto;
   display: flex;
-  /* justify-content: flex-end; */
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1110px;
+  max-width: 100%;
+}
+
+body:not(.cco_templateless_page)
+  .body_wrapper.clearfix.co_body
+  #co_body_container {
+  -webkit-box-flex: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  margin-right: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 @media screen and (max-width: 650px) {
