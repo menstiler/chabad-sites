@@ -1028,3 +1028,29 @@ div#footer {
   font-size: 20px;
   font-weight: 900;
 }
+
+body.home #BodyContainer,
+body > #content > .wrapper,
+body.home .g960 {
+  width: 1080px;
+  margin-left: auto;
+}
+
+body.home .promo_slider.v380 .slider {
+  height: 360px;
+}
+
+@media (max-width: 650px) {
+  body.home .promo_slider.v380 .slider {
+    height: auto;
+  }
+}
+
+body.home .promo_slider.v380 .cycle-controlNav {
+  top: auto;
+  bottom: 10px;
+}
+
+body.home .promo_slider.v380 .cycle-caption {
+  height: 316px;
+}
