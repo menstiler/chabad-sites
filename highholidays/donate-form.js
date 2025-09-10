@@ -269,9 +269,7 @@ function headerSetup() {
   }
   jQuery(SELECTORS.headerTitle).remove();
 
-  articleHeader.insertAdjacentHTML(
-    "beforebegin",
-    `
+  articleHeader.before(`
   <div class="banner">
     <picture>
     <source srcset=${SELECTORS.mobileBanner} media="(max-width: 650px)">
@@ -289,8 +287,7 @@ function headerSetup() {
   <div class="campaign-article">
     ${SELECTORS.campaignTextHtml}
   </div>
-  `
-  );
+  `);
   articleHeader.append(`             
               <div class="matchers-container">
               <h3>${SELECTORS.matchersTitle}</h3>            
