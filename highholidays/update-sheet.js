@@ -18,11 +18,11 @@ function getElementValue(field) {
 }
 
 async function sendToSheet() {
-  let amount = getElementValue("Total Amount");
-  let dedication = getElementValue("Message or Dedication");
-  let submissionId = getElementValue("Submission Id");
-  let anonymous = getElementValue("Checkbo13");
-  let displayName = getElementValue("Name to be displayed");
+  let amount = getElementValue(SELECTORS.totalAmountField);
+  let dedication = getElementValue(SELECTORS.dedicationField);
+  let submissionId = getElementValue(SELECTORS.submissionIdField);
+  let anonymous = getElementValue(SELECTORS.anonymousField);
+  let displayName = getElementValue(SELECTORS.displayNameField);
 
   if (anonymous && anonymous === "Donate anonymously") {
     displayName = "Anonymous";
