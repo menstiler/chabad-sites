@@ -1,19 +1,18 @@
-const url =
-  "https://api.menstiler.com/?id=1DwHmQF6J60S126sWqG_-kpxpRcgO4201IjHgAqGeHdU";
+const url = `https://api.menstiler.com/?id=${SELECTORS.googleSheetId}`;
 
 const PAGE_SCRIPTS = [
   {
-    aid: "6974961",
+    aid: SELECTORS.formArticleId,
     href: "https://assets.menstiler.com/highholidays/donate-form.min.js",
     type: "script",
   },
   {
-    aid: "6974961",
+    aid: SELECTORS.formArticleId,
     href: "https://assets.menstiler.com/highholidays/donate-form.css",
     type: "style",
   },
   {
-    aid: "ArticleCcoResponse_cdo/aid/6974961",
+    aid: `ArticleCcoResponse_cdo/aid/${SELECTORS.formArticleId}`,
     href: "https://assets.menstiler.com/highholidays/update-sheet.min.js",
     type: "script",
   },
