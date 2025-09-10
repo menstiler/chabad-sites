@@ -1,3 +1,46 @@
+const SELECTORS = {
+  tickerHeaderText: "Thank you to our latest donors",
+  get amountDisplaySubtext() {
+    return `Every dollar is being matched ${this.multiplier}X`;
+  },
+  amountContainer: "id_19",
+  amountOptions: ".form-radio[name='q21_input21']",
+  amountInput: "input_19",
+  anonymousInput: "input[name='q13_input13[]']",
+  nameInput: "input[name='q23_input23']",
+  displayNameInput: "input[name='q24_input24']",
+  amountErrorMessage: "Please add an amount greater than 0",
+  campaignTextHtml: `With the High Holidays on the horizon, our hearts are filled with hope and gratitude as we begin our annual campaign. The past year has shown us the strength of our connections and the power of coming together. As we prepare for the solemnity and inspiration of Kol Nidrei, we invite you to be a vital part of our mission.  
+    <br><br>
+    Thanks to a group of generous and devoted partners, every donation made in this campaign will be matched dollar-for-dollar. This means your support goes twice as far, transforming every gift into a powerful force for good.`,
+  mobileBanner: "https://w2.chabad.org/media/images/1332/wHmB13329854.png",
+  banner: "https://w2.chabad.org/media/images/1332/Utwa13329855.png",
+  matchersTitle: "OUR MATCHERS",
+  matchers: [
+    { image: "https://chabadofislip.com/media/images/1332/MRNK13329969.png" },
+    { image: "https://chabadofislip.com/media/images/1332/ofra13329965.png" },
+    { image: "https://chabadofislip.com/media/images/1332/UtJE13329971.png" },
+    { image: "https://chabadofislip.com/media/images/1332/lZMK13329970.png" },
+  ],
+  formId: "#6974961",
+  multiplier: 2,
+  donateButtonText: "DONATE",
+  progressBar: ".progress-bar",
+  label: ".campaign-progress h4",
+  percent: ".campaign-progress .percent",
+  tickerTrack: ".ticker-track",
+  tickerContainer: ".ticker-container",
+  appealContainer: ".appeal-container",
+  displayAmount: "#amount-display .amount",
+  submitButton: ".form-submit-button",
+  formContainer: ".userform-form",
+  donateButtonContainer: ".mobile-button-container",
+  headerContainer: ".master-content-wrapper",
+  bodyContainer: ".body_wrapper",
+  headerTitle: ".article-header__title",
+  receiptContainer: ".js-content",
+};
+
 function getFromSheet() {
   try {
     fetch(url)
@@ -6,18 +49,18 @@ function getFromSheet() {
         return response.json();
       })
       .then((data) => {
-        const bar = document.querySelector(".progress-bar");
-        const label = document.querySelector(".campaign-progress h4");
-        const percentEl = document.querySelector(".campaign-progress .percent");
+        const bar = document.querySelector(SELECTORS.progressBar);
+        const label = document.querySelector(SELECTORS.label);
+        const percentEl = document.querySelector(SELECTORS.percent);
         const donors = data.values.reverse();
-        const tickerTrack = document.querySelector(".ticker-track");
+        const tickerTrack = document.querySelector(SELECTORS.tickerTrack);
         tickerTrack.style.display = "none";
         tickerTrack.innerHTML = "";
 
         if (donors.length > 0 && donors[0][0].length > 0) {
-          const $latestDonors = jQuery(".ticker-container");
+          const $latestDonors = jQuery(SELECTORS.tickerContainer);
           const newEl = document.createElement("h4");
-          newEl.textContent = "Thank you to our latest donors";
+          newEl.textContent = SELECTORS.tickerHeaderText;
           newEl.className = "donors-title";
           $latestDonors[0].parentNode.insertBefore(newEl, $latestDonors[0]);
         }
@@ -60,13 +103,11 @@ function getFromSheet() {
         });
 
         function loadScript(src, callback) {
-          // if (document.querySelector(`script[src="${src}"]`) === null) {
           const script = document.createElement("script");
           script.src = src;
           script.onload = callback;
           script.onerror = () => console.error(`Failed to load script: ${src}`);
           document.head.appendChild(script);
-          // }
         }
 
         loadScript(
@@ -78,7 +119,7 @@ function getFromSheet() {
               () => {
                 tickerTrack.style.display = "block";
                 $j(function () {
-                  $j(".ticker-track").webTicker({
+                  $j(SELECTORS.tickerTrack).webTicker({
                     speed: 50,
                     direction: "left",
                     startEmpty: true,
@@ -100,21 +141,21 @@ function getFromSheet() {
 }
 
 function pageSetup() {
-  jQuery(".appeal-container").remove();
+  jQuery(SELECTORS.appealContainer).remove();
   const divEl = document.createElement("div");
   divEl.id = "amount-display";
-  divEl.innerHTML = `<div class="center">${Co.Settings.MosadName} receives</div><div class="amount">$0</div><div class="matched-text">Every dollar is being matched 2X</div>`;
+  divEl.innerHTML = `<div class="center">${Co.Settings.MosadName} receives</div><div class="amount">$0</div><div class="matched-text">${SELECTORS.amountDisplaySubtext}</div>`;
 
-  const amountContainer = document.getElementById("id_19");
+  const amountContainer = document.getElementById(SELECTORS.amountContainer);
   if (!amountContainer) return;
   amountContainer.appendChild(divEl);
 
-  $amountOptions = document.querySelectorAll(".form-radio[name='q21_input21']");
-  $amountInput = document.getElementById("input_19");
-  $anonymousInput = document.querySelector("input[name='q13_input13[]']");
-  $nameInput = document.querySelector("input[name='q23_input23']");
-  $displayNameInput = document.querySelector("input[name='q24_input24']");
-  $displayAmount = document.querySelector("#amount-display .amount");
+  $amountOptions = document.querySelectorAll(SELECTORS.amountOptions);
+  $amountInput = document.getElementById(SELECTORS.amountInput);
+  $anonymousInput = document.querySelector(SELECTORS.anonymousInput);
+  $nameInput = document.querySelector(SELECTORS.nameInput);
+  $displayNameInput = document.querySelector(SELECTORS.displayNameInput);
+  $displayAmount = document.querySelector(SELECTORS.displayAmount);
   $amountInput.setAttribute("min", "0");
 
   $amountOptions.forEach((el) =>
@@ -126,7 +167,9 @@ function pageSetup() {
       } else {
         const total = parseFloat(e.target.value.replace("$", ""));
         $amountInput.setValue(total);
-        $displayAmount.textContent = (total * 2).toLocaleString("en-US", {
+        $displayAmount.textContent = (
+          total * SELECTORS.multiplier
+        ).toLocaleString("en-US", {
           style: "currency",
           currency: "USD",
         });
@@ -137,13 +180,12 @@ function pageSetup() {
 
   $amountInput.addEventListener("input", function (e) {
     const total = parseFloat(e.target.value);
-    let amountToDisplay = parseFloat(e.target.value * 2).toLocaleString(
-      "en-US",
-      {
-        style: "currency",
-        currency: "USD",
-      }
-    );
+    let amountToDisplay = parseFloat(
+      e.target.value * SELECTORS.multiplier
+    ).toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
     if (isNaN(total)) {
       amountToDisplay = "$0";
     }
@@ -167,14 +209,14 @@ function pageSetup() {
   });
 
   document
-    .querySelector(".form-submit-button")
+    .querySelector(SELECTORS.submitButton)
     .addEventListener("click", function (e) {
       if ($amountInput.value <= 0) {
         e.preventDefault();
         e.stopPropagation();
         const divEl = document.createElement("div");
         divEl.classList.add("form-error-message");
-        divEl.innerHTML = `<i class="fa fa-fw fa-exclamation-circle"></i>&nbsp; Please add an amount greater than 0<div class="form-error-arrow"><div class="form-error-arrow-inner"></div></div>`;
+        divEl.innerHTML = `<i class="fa fa-fw fa-exclamation-circle"></i>&nbsp; ${SELECTORS.amountErrorMessage}<div class="form-error-arrow"><div class="form-error-arrow-inner"></div></div>`;
         $amountInput.after(divEl);
         $amountInput.scrollIntoView({
           behavior: "smooth",
@@ -191,8 +233,8 @@ function pageSetup() {
     })
   );
 
-  const target = document.querySelector(".userform-form");
-  const banner = document.querySelector(".mobile-button-container");
+  const target = document.querySelector(SELECTORS.formContainer);
+  const banner = document.querySelector(SELECTORS.donateButtonContainer);
 
   if (target && banner) {
     const observer = new IntersectionObserver(
@@ -215,23 +257,25 @@ function pageSetup() {
 }
 
 function headerSetup() {
-  let articleHeader = jQuery(".master-content-wrapper");
+  let articleHeader = jQuery(SELECTORS.headerContainer);
 
   if (articleHeader.length === 0) {
-    jQuery(".body_wrapper").before(
+    jQuery(SELECTORS.bodyContainer).before(
       '<div class="master-content-wrapper"></div>'
     );
 
     // Re-select the newly created element
-    articleHeader = jQuery(".master-content-wrapper");
+    articleHeader = jQuery(SELECTORS.headerContainer);
   }
-  jQuery(".article-header__title").remove();
+  jQuery(SELECTORS.headerTitle).remove();
 
-  articleHeader.before(`
+  articleHeader.insertAdjacentHTML(
+    "beforebegin",
+    `
   <div class="banner">
     <picture>
-    <source srcset="https://w2.chabad.org/media/images/1332/wHmB13329854.png" media="(max-width: 650px)">
-    <img src="https://w2.chabad.org/media/images/1332/Utwa13329855.png" alt="Hero Banner" class="banner-img">
+    <source srcset=${SELECTORS.mobileBanner} media="(max-width: 650px)">
+    <img src=${SELECTORS.banner} alt="Hero Banner" class="banner-img">
   </picture>
   </div>
    <div class="campaign-progress">
@@ -243,27 +287,21 @@ function headerSetup() {
     </div> 
   </div>
   <div class="campaign-article">
-    With the High Holidays on the horizon, our hearts are filled with hope and gratitude as we begin our annual campaign. The past year has shown us the strength of our connections and the power of coming together. As we prepare for the solemnity and inspiration of Kol Nidrei, we invite you to be a vital part of our mission.  
-    <br><br>
-    Thanks to a group of generous and devoted partners, every donation made in this campaign will be matched dollar-for-dollar. This means your support goes twice as far, transforming every gift into a powerful force for good.
+    ${SELECTORS.campaignTextHtml}
   </div>
-  `);
+  `
+  );
   articleHeader.append(`             
               <div class="matchers-container">
-              <h3>OUR MATCHERS</h3>            
+              <h3>${SELECTORS.matchersTitle}</h3>            
                 <div class="matchers-wrapper">
-                  <div class="matcher">
-                    <img src="https://chabadofislip.com/media/images/1332/MRNK13329969.png" />
-                  </div>
-                    <div class="matcher">
-                    <img src="https://chabadofislip.com/media/images/1332/ofra13329965.png" />
-                  </div>
-                  <div class="matcher">
-                    <img src="https://chabadofislip.com/media/images/1332/UtJE13329971.png" />
-                  </div>
-                   <div class="matcher">
-                    <img src="https://chabadofislip.com/media/images/1332/lZMK13329970.png" />
-                  </div>
+                ${SELECTORS.matchers
+                  .map((matcher) => {
+                    return `<div class="matcher">
+                    <img src=${matcher.image} />
+                  </div>`;
+                  })
+                  .join("")}                                     
                 </div>
               </div>              
             <div class="ticker-container">
@@ -274,11 +312,11 @@ function headerSetup() {
   if (!window.location.pathname.includes("ArticleCcoResponse_cdo")) {
     document.body.insertAdjacentHTML(
       "beforeend",
-      `<div class="mobile-button-container"> <a href="#6974961">DONATE</a></div>`
+      `<div class="mobile-button-container"> <a href=${SELECTORS.formId}>${SELECTORS.donateButtonText}</a></div>`
     );
   } else {
     document
-      .querySelector(".js-content")
+      .querySelector(SELECTORS.receiptContainer)
       .scrollIntoView({ behavior: "smooth", block: "center" });
   }
 }
