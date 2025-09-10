@@ -1,6 +1,6 @@
-function getFromSheet() {
+function getFromSheet(freshResponse = false) {
   try {
-    fetch(url)
+    fetch(url + (freshResponse ? `&invalidate=true` : ""))
       .then((response) => {
         if (!response.ok) throw new Error("Network response was not ok");
         return response.json();

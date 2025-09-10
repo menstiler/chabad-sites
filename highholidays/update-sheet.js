@@ -51,7 +51,7 @@ async function sendToSheet() {
     });
     console.log("Data sent");
     localStorage.setItem("submissionId", submissionId);
-    getFromSheet();
+    getFromSheet(true);
   } catch (err) {
     console.error("Error:", err);
   }
