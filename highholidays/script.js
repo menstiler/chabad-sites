@@ -4,7 +4,7 @@ const url =
 const PAGE_SCRIPTS = [
   {
     aid: "6974961",
-    href: "https://assets.menstiler.com/highholidays/donate-form.js",
+    href: "https://assets.menstiler.com/highholidays/donate-form.min.js",
     type: "script",
   },
   {
@@ -14,7 +14,7 @@ const PAGE_SCRIPTS = [
   },
   {
     aid: "ArticleCcoResponse_cdo/aid/6974961",
-    href: "https://assets.menstiler.com/highholidays/update-sheet.js",
+    href: "https://assets.menstiler.com/highholidays/update-sheet.min.js",
     type: "script",
   },
 ];
