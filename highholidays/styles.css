@@ -265,46 +265,10 @@ img.form-image {
   top: 0 !important;
 }
 
-.campaign-progress {
-  padding: 3rem;
-  text-align: center;
-}
-
 @media (max-width: 768px) {
   .campaign-progress {
     width: 100%;
   }
-}
-
-.campaign-progress h4 {
-  margin-bottom: 1rem;
-  font-weight: 500;
-}
-
-.progress-bar-container {
-  width: 760px;
-  border: 2px solid #d0de8d;
-  border-radius: 50rem;
-  margin: 0 auto;
-
-  @media (max-width: 760px) {
-    width: 100%;
-  }
-}
-
-.progress-bar {
-  background-color: #b53a78;
-  height: 1.7rem;
-  width: 0%;
-  transition: width 0.6s ease;
-  border-radius: 50rem;
-}
-
-.progress-bar .percent {
-  color: white;
-  font-size: 13px;
-  float: right;
-  margin-right: 5px;
 }
 
 #latest-donors-wrapper {
@@ -402,18 +366,6 @@ img.form-image {
 
 .dedication-text {
   font-family: var(--primary-font);
-}
-
-.donors-title {
-  margin-bottom: 1rem;
-  font-size: 20px;
-  border-bottom: 1px solid;
-  width: auto;
-  display: flex;
-  justify-self: center;
-  align-self: center;
-  font-family: var(--primary-font);
-  font-weight: 600;
 }
 
 div#chabad_head .chabad_navigator_bar ul li .sub_menu .item {
