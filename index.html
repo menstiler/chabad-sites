@@ -11,6 +11,7 @@
       rel="stylesheet"
       href="styles.css"
     />
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdWyMcrAAAAAE7tyr99HFeOxAnStqrZC_Niy6sp"></script>
   </head>
   <body>
     <div class="container">
@@ -58,10 +59,11 @@
           required="required"
         ></textarea
         ><br />
-        <div
-          class="g-recaptcha"
-          data-sitekey="6Lc6p78rAAAAAC4K-37zosQxzgj9KSahrpEkHHxc"
-        ></div>
+        <input
+          type="hidden"
+          name="g-recaptcha-response"
+          id="recaptchaResponse"
+        />
         <div class="button-container">
           <button
             type="submit"
@@ -92,61 +94,64 @@
     </div>
 
     <script>
+      function onSubmit(token) {
+        document.getElementById("contactForm").submit();
+      }
       // Replace with your email sending API endpoint
       const EMAIL_API_URL =
         "https://sxxvt5mwg7l3zhbscyoybu46gm0ohoby.lambda-url.us-east-2.on.aws/";
 
       function handleFormSubmit(event) {
         event.preventDefault();
-        const form = document.getElementById("contactForm");
-        const button = document.querySelector(
-          'button[type="submit"] .button-text'
-        );
+        grecaptcha.ready(function () {
+          grecaptcha
+            .execute("6LdWyMcrAAAAAE7tyr99HFeOxAnStqrZC_Niy6sp", {
+              action: "submit",
+            })
+            .then(function (token) {
+              document.getElementById("recaptchaResponse").value = token;
 
-        const recaptchaToken = grecaptcha.getResponse();
-        if (!recaptchaToken) {
-          alert("Please complete the reCAPTCHA");
-          return;
-        }
+              const form = document.getElementById("contactForm");
+              const button = document.querySelector(
+                'button[type="submit"] .button-text'
+              );
 
-        button.textContent = "Sending...";
+              button.textContent = "Sending...";
 
-        const formData = {
-          name: form.name.value,
-          email: form.email.value,
-          phone: form.phone.value,
-          message: form.message.value,
-          recaptchaToken,
-        };
+              const formData = {
+                name: form.name.value,
+                email: form.email.value,
+                phone: form.phone.value,
+                message: form.message.value,
+                recaptchaToken: token,
+              };
 
-        fetch(EMAIL_API_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        })
-          .then((response) => {
-            if (response.ok) {
-              form.reset();
-              document.getElementById("contactForm").classList.add("hide");
-              document.querySelector(".receipt").classList.add("show");
-              grecaptcha.reset();
-            } else {
-              button.textContent = "Send";
-              alert("Failed to send message. Please try again.");
-            }
-          })
-          .catch(() => {
-            button.textContent = "Send";
-            alert("Error sending message. Please try again later.");
-          });
+              fetch(EMAIL_API_URL, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+              })
+                .then((response) => {
+                  if (response.ok) {
+                    form.reset();
+                    document
+                      .getElementById("contactForm")
+                      .classList.add("hide");
+                    document.querySelector(".receipt").classList.add("show");
+                  } else {
+                    button.textContent = "Send";
+                    alert("Failed to send message. Please try again.");
+                  }
+                })
+                .catch((error) => {
+                  button.textContent = "Send";
+                  alert("Error sending message. Please try again later.");
+                });
+            });
+        });
       }
     </script>
-    <script
-      src="https://www.google.com/recaptcha/api.js"
-      async
-      defer
-    ></script>
   </body>
 </html>
