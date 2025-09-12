@@ -48,6 +48,7 @@ input {
   padding: 10px 0 5px;
   border: 0px;
   border-bottom: 1px #c5c5c5 solid;
+  border-radius: 0 !important;
 }
 
 input,
@@ -67,7 +68,7 @@ textarea {
 }
 
 textarea {
-  /* border: 0px; */
+  padding: 0;
 }
 
 button.animated-button {
