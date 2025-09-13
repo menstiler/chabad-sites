@@ -480,8 +480,8 @@ body:not(.cco_templateless_page)
       display: grid;
       flex-wrap: wrap;
       gap: 1rem;
-      grid-template-columns: repeat(4, 1fr);
-      width: 80%;
+      grid-template-columns: repeat(5, 1fr);
+      width: 100%;
       margin: 0 auto;
 
       @media (max-width: 650px) {
@@ -500,7 +500,7 @@ body:not(.cco_templateless_page)
     span.form-radio-item {
       background-image: var(--amount-bg);
       color: var(--amount-color);
-      width: 175px;
+      width: 172px;
       height: 75px;
       justify-content: center;
       align-items: center;
