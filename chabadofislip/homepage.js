@@ -144,9 +144,146 @@ function setUpScrolling() {
   });
 }
 
+function setUpSiteWideTicker() {
+  if (!window.location.pathname.includes("6974961")) {
+    document.body.insertAdjacentHTML(
+      "afterbegin",
+      `<div class="donation_campaign highholidays">
+  <div class="wrapper">
+  <div class='top'>
+  <div class="wrapper clearfix">
+<div class="col1">
+<div class="banner">
+<a class="donate_link js-header-donate js-banner-donate-link" href="/6974961"><img src="https://w2.chabad.org/images/global/spacer.gif" alt="High Holiday Appeal" title="High Holiday Appeal"></a></div>
+</div>
+<div class="col2 title_container desktop-only">
+<div class="large"><a class="donate_link js-header-donate js-banner-donate-link" href="/6974961">
+All donations being matched!
+</a></div>
+<div class="large"><a class="donate_link js-header-donate js-banner-donate-link" href="/6974961">
+Please partner with Chabad of Islip.
+</a></div>
+</div>
+<div class="col4 button_container">
+<div id="DonateButton_wrapper" class="co_global_button red js-header-donate"><a id="DonateButton" href="/6974961" class="js-banner-donate-link button js-header-donate no_outline"><span class="donate-button__text--wide">Please Donate Today</span></a></div>
+</div>
+</div>
+  </div>
+  <div class="bottom">
+  <div class="float_left label">Thank you:</div>
+  <div id="TICKER" class="ticker"></div></div></div></div>`
+    );
+
+    // ticker class
+    var ScrollingTicker = function (container, contents, options) {
+      this.Options = Object.assign(
+        {
+          HorizontalDirection: "ltr",
+          Speed: 1.5,
+          Paused: false,
+          Width: "100%",
+        },
+        options || {}
+      );
+      this.Contents = contents;
+      this.ContainingElement = container;
+      if (!container) return;
+
+      this.Paused = false;
+      this.Start = function () {
+        this.Options.Width =
+          this.Options.Width == "100%"
+            ? this.ContainingElement.clientWidth
+            : this.Options.Width;
+
+        this.ContainingElement.innerHTML =
+          "<div nowrap style='width:" +
+          this.Options.Width +
+          ";white-space:nowrap;'>" +
+          this.Contents +
+          "</div>";
+
+        this.ContainingElement.scrollLeft =
+          this.Options.HorizontalDirection == "rtl"
+            ? this.ContainingElement.scrollWidth -
+              this.ContainingElement.offsetWidth
+            : 0;
+
+        this.ContainingElement.style.display = "block";
+        this.Tick();
+      };
+
+      this.Tick = function () {
+        if (!this.Paused) {
+          this.ContainingElement.scrollLeft +=
+            this.Options.Speed *
+            (this.Options.HorizontalDirection == "rtl" ? -1 : 1);
+        }
+
+        if (
+          this.Options.HorizontalDirection == "rtl" &&
+          this.ContainingElement.scrollLeft <=
+            -(
+              this.ContainingElement.scrollWidth -
+              this.ContainingElement.offsetWidth
+            )
+        ) {
+          this.ContainingElement.scrollLeft = 0;
+        } else if (
+          this.Options.HorizontalDirection != "rtl" &&
+          this.ContainingElement.scrollLeft >=
+            this.ContainingElement.scrollWidth -
+              this.ContainingElement.offsetWidth
+        ) {
+          this.ContainingElement.scrollLeft = 0;
+        }
+
+        setTimeout(this.Tick.bind(this), 30);
+      };
+
+      this.Start();
+    };
+
+    fetch(
+      "https://api.menstiler.com/?id=1DwHmQF6J60S126sWqG_-kpxpRcgO4201IjHgAqGeHdU"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        const tempDiv = document.createElement("div");
+
+        data.values.forEach((donor, index) => {
+          if (index !== 0) {
+            const donorDiv = document.createElement("div");
+            donorDiv.className = "item";
+            donorDiv.innerHTML = `
+          <div class="name">
+              ${donor[0]} - <b>$${donor[1]}</b>${
+              donor[2] ? " - " + donor[2] : ""
+            }
+
+          </div>
+        `;
+            tempDiv.appendChild(donorDiv);
+          }
+        });
+
+        const html = tempDiv.innerHTML;
+        const el = document.getElementById("TICKER");
+
+        if (el) {
+          var ticker = new ScrollingTicker(el, html, {
+            HorizontalDirection: "ltr",
+          });
+          el.ticker = ticker;
+        }
+      });
+  }
+}
+
 function init() {
   setUpScrolling();
   setUpSearch();
+  setUpSiteWideTicker();
 
   const parentElement = document.getElementById("content");
 

@@ -1054,3 +1054,50 @@ body.home .promo_slider.v380 .cycle-controlNav {
 body.home .promo_slider.v380 .cycle-caption {
   height: 316px;
 }
+
+// site wide ticker
+
+.donation_campaign .float_left,
+.donation_campaign .ticker .item div {
+  font-family: var(--primary-font) !important;
+}
+
+.donation_campaign .top .col1 {
+  width: 300px;
+}
+
+.donation_campaign .top .col2 {
+  width: 400px !important;
+  text-align: center;
+  margin-left: 0;
+}
+
+.donation_campaign .top .col2 a {
+  font-family: "Mulish" !important;
+}
+
+@media screen and (max-width: 650px) {
+  .donation_campaign {
+    position: relative;
+    top: 50px;
+    left: 0;
+    right: 0;
+  }
+  .donation_campaign .co_global_button,
+  .donation_campaign .top .col2,
+  .donation_campaign .top .col1 {
+    width: 100% !important;
+  }
+  .donation_campaign.highholidays .top .col4 {
+    float: none !important;
+    display: flex;
+    justify-content: center;
+  }
+  .donation_campaign .co_global_button {
+    max-width: 250px !important;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    float: none;
+  }
+}
