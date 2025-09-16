@@ -174,76 +174,6 @@ Please partner with Chabad of Islip.
   <div id="TICKER" class="ticker"></div></div></div></div>`
     );
 
-    // ticker class
-    var ScrollingTicker = function (container, contents, options) {
-      this.Options = Object.assign(
-        {
-          HorizontalDirection: "ltr",
-          Speed: 1.5,
-          Paused: false,
-          Width: "100%",
-        },
-        options || {}
-      );
-      this.Contents = contents;
-      this.ContainingElement = container;
-      if (!container) return;
-
-      this.Paused = false;
-      this.Start = function () {
-        this.Options.Width =
-          this.Options.Width == "100%"
-            ? this.ContainingElement.clientWidth
-            : this.Options.Width;
-
-        this.ContainingElement.innerHTML =
-          "<div nowrap style='width:" +
-          this.Options.Width +
-          ";white-space:nowrap;'>" +
-          this.Contents +
-          "</div>";
-
-        this.ContainingElement.scrollLeft =
-          this.Options.HorizontalDirection == "rtl"
-            ? this.ContainingElement.scrollWidth -
-              this.ContainingElement.offsetWidth
-            : 0;
-
-        this.ContainingElement.style.display = "block";
-        this.Tick();
-      };
-
-      this.Tick = function () {
-        if (!this.Paused) {
-          this.ContainingElement.scrollLeft +=
-            this.Options.Speed *
-            (this.Options.HorizontalDirection == "rtl" ? -1 : 1);
-        }
-
-        if (
-          this.Options.HorizontalDirection == "rtl" &&
-          this.ContainingElement.scrollLeft <=
-            -(
-              this.ContainingElement.scrollWidth -
-              this.ContainingElement.offsetWidth
-            )
-        ) {
-          this.ContainingElement.scrollLeft = 0;
-        } else if (
-          this.Options.HorizontalDirection != "rtl" &&
-          this.ContainingElement.scrollLeft >=
-            this.ContainingElement.scrollWidth -
-              this.ContainingElement.offsetWidth
-        ) {
-          this.ContainingElement.scrollLeft = 0;
-        }
-
-        setTimeout(this.Tick.bind(this), 30);
-      };
-
-      this.Start();
-    };
-
     fetch(
       "https://api.menstiler.com/?id=1DwHmQF6J60S126sWqG_-kpxpRcgO4201IjHgAqGeHdU"
     )
@@ -277,6 +207,17 @@ Please partner with Chabad of Islip.
           el.ticker = ticker;
         }
       });
+
+    const header = document.querySelector(".menu_wrapper");
+    const stickyPoint = header.offsetTop;
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY >= stickyPoint) {
+        header.classList.add("fixed");
+      } else {
+        header.classList.remove("fixed");
+      }
+    });
   }
 }
 

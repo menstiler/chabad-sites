@@ -1084,7 +1084,7 @@ body.home .promo_slider.v380 .cycle-caption {
 @media screen and (max-width: 650px) {
   .donation_campaign {
     position: relative;
-    top: 50px;
+    top: 0;
     left: 0;
     right: 0;
   }
@@ -1105,4 +1105,33 @@ body.home .promo_slider.v380 .cycle-caption {
     justify-content: center;
     float: none;
   }
+}
+
+.donation_campaign ~ .mobile_wrapper_container .menu_wrapper {
+  position: static;
+}
+
+.donation_campaign ~ .mobile_wrapper_container #mobile_content {
+  padding-top: 0;
+}
+
+.donation_campaign ~ .mobile_wrapper_container .menu_wrapper.fixed {
+  position: fixed;
+  top: 0;
+}
+
+.donation_campaign ~ .mobile_wrapper_container #mobile_content {
+  padding-top: 0;
+}
+
+.donation_campaign ~ .mobile_wrapper_container .menu_wrapper.fixed {
+  position: fixed;
+  top: 0;
+}
+
+.donation_campaign
+  ~ .mobile_wrapper_container
+  .menu_wrapper.fixed
+  ~ #mobile_content {
+  padding-top: 50px;
 }
