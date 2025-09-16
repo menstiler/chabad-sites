@@ -160,6 +160,8 @@ function setUpSiteWideTicker() {
 <div class="large"><a class="donate_link js-header-donate js-banner-donate-link" href="/6974961">
 Please Partner with Chabad of Islip - All donations being matched!
 </a></div>
+<div style="height: 5px;"></div>
+  <div class="label">Thank you to our latest donors:</div>
 </div>
 <div class="col4 button_container">
 <div id="DonateButton_wrapper" class="co_global_button red js-header-donate"><a id="DonateButton" href="/6974961" class="js-banner-donate-link button js-header-donate no_outline"><span class="donate-button__text--wide">Donate Today</span></a></div>

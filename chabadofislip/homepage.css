@@ -1057,6 +1057,15 @@ body.home .promo_slider.v380 .cycle-caption {
 
 /* site wide ticker */
 
+.donation_campaign .wrapper {
+  width: 100% !important;
+}
+
+.donation_campaign .top {
+  width: 975px;
+  margin: 0 auto;
+}
+
 .donation_campaign {
   z-index: 101 !important;
   font-family: var(--primary-font) !important;
@@ -1079,6 +1088,7 @@ body.home .promo_slider.v380 .cycle-caption {
 .donation_campaign .label,
 .donation_campaign .ticker .item div {
   font-family: var(--primary-font) !important;
+  font-size: 14px;
 }
 
 .donation_campaign .top .col1 {
@@ -1089,11 +1099,15 @@ body.home .promo_slider.v380 .cycle-caption {
   width: 54% !important;
   text-align: center;
   margin-left: 0;
-  display: inline-table;
+  height: auto !important;
 }
 
 .donation_campaign .top .col2 a {
   font-family: "Mulish" !important;
+}
+
+.donation_campaign .bottom .label {
+  display: none;
 }
 
 @media screen and (max-width: 650px) {
@@ -1104,13 +1118,21 @@ body.home .promo_slider.v380 .cycle-caption {
     right: 0;
   }
 
+  .donation_campaign .top {
+    width: 100%;
+  }
+
   .donation_campaign .top .col2,
   .donation_campaign .top .col1 {
     width: 50% !important;
   }
 
   .donation_campaign .top .col2 {
-    display: none;
+    display: none !important;
+  }
+
+  .donation_campaign .bottom .label {
+    display: block;
   }
 
   .donation_campaign.highholidays .top .col4 {
