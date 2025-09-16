@@ -209,15 +209,17 @@ Please partner with Chabad of Islip.
       });
 
     const header = document.querySelector(".menu_wrapper");
-    const stickyPoint = header.offsetTop;
+    if (header) {
+      const stickyPoint = header.offsetTop;
 
-    window.addEventListener("scroll", () => {
-      if (window.scrollY >= stickyPoint) {
-        header.classList.add("fixed");
-      } else {
-        header.classList.remove("fixed");
-      }
-    });
+      window.addEventListener("scroll", () => {
+        if (window.scrollY >= stickyPoint) {
+          header.classList.add("fixed");
+        } else {
+          header.classList.remove("fixed");
+        }
+      });
+    }
   }
 }
 
