@@ -1,10 +1,11 @@
-body:not(.cco_templateless_page)
+body:not(.cco_templateless_page):not(.section_branch):not(.section_root)
   #BodyContainer:not(:has(.syndicated))
   div#co_body_container {
   padding: 50px 0;
 }
 
-body:not(.cco_templateless_page) .body_wrapper.clearfix.co_body {
+body:not(.cco_templateless_page):not(.section_branch)
+  .body_wrapper.clearfix.co_body {
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -17,7 +18,7 @@ body:not(.cco_templateless_page) .body_wrapper.clearfix.co_body {
   max-width: 100%;
 }
 
-body:not(.cco_templateless_page)
+body:not(.cco_templateless_page):not(.section_branch):not(.section_root)
   .body_wrapper.clearfix.co_body
   #co_body_container {
   -webkit-box-flex: 2;
@@ -35,7 +36,7 @@ body:not(.cco_templateless_page)
   }
 }
 
-body:not(.cco_templateless_page)
+body:not(.cco_templateless_page):not(.section_branch)
   h1.article-header__title.js-article-title.js-page-title {
   color: white;
   font-family: var(--secondary-font);
@@ -177,7 +178,7 @@ ul.small_links li,
 .cco_body .co_global_button .button {
   transition: background 0.4s;
   letter-spacing: 2px;
-  padding: 12px 10px;
+  padding: 9px 10px;
   text-transform: uppercase;
   text-shadow: none;
   -webkit-box-shadow: none;
@@ -252,4 +253,8 @@ body:not(.home) #content #BodyContainer .body_wrapper.clearfix {
 
 #content #BodyContainer #co_body_container:has(.app-torah-texts) {
   width: 100%;
+}
+
+.medium_top_margin {
+  margin-top: 10px;
 }
