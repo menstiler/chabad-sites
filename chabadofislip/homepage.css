@@ -1055,7 +1055,12 @@ body.home .promo_slider.v380 .cycle-caption {
   height: 316px;
 }
 
-// site wide ticker
+/* site wide ticker */
+
+.donation_campaign {
+  z-index: 101 !important;
+  font-family: var(--primary-font) !important;
+}
 
 .donation_campaign .float_left,
 .donation_campaign .ticker .item div {
