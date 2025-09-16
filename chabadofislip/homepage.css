@@ -1118,6 +1118,11 @@ body.home .promo_slider.v380 .cycle-caption {
     right: 0;
   }
 
+  .lang_en .donation_campaign .co_global_button .button {
+    display: flex;
+    align-items: center;
+  }
+
   .donation_campaign .top {
     width: 100%;
   }
