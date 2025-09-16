@@ -208,12 +208,15 @@ Please Partner with Chabad of Islip - All donations being matched!
       });
 
     const header = document.querySelector(".menu_wrapper");
-    if (header) {
-      const stickyPoint = header.offsetTop;
+    const sideMenu = document.getElementById("PrimaryNavigationContainer");
 
+    if (header && sideMenu) {
+      const stickyPoint = header.offsetTop + 22;
       window.addEventListener("scroll", () => {
+        sideMenu.style.top = `-${scrollY}px`;
         if (window.scrollY >= stickyPoint) {
           header.classList.add("fixed");
+          sideMenu.style.top = `-100px`;
         } else {
           header.classList.remove("fixed");
         }
