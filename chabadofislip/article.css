@@ -258,3 +258,9 @@ body:not(.home) #content #BodyContainer .body_wrapper.clearfix {
 .medium_top_margin {
   margin-top: 10px;
 }
+
+@media screen and (max-width: 650px) {
+  .medium_top_margin {
+    margin-top: 29px;
+  }
+}
