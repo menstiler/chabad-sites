@@ -953,8 +953,7 @@ table.main_menu_container.first.global {
   width: 100%;
 }
 
-.home form:before,
-.home #SubscribeFormContainer:before {
+.home form.bottom_subscribe_box:before {
   content: "Join Our Mailing List";
   color: var(--primary-color);
   font-size: 25px;
