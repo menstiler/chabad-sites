@@ -1155,3 +1155,20 @@ body.home .promo_slider.v380 .cycle-caption {
   ~ #mobile_content {
   padding-top: 50px;
 }
+
+.mobile #footer {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.mobile form.bottom_subscribe_box,
+.mobile > #footer > .wrapper {
+  transition: transform 0.4s linear;
+  -webkit-transition: transform 0.4s linear;
+}
+
+.menu_open form.bottom_subscribe_box,
+.menu_open > #footer > .wrapper {
+  -webkit-transform: translate3d(86%, 0, 0);
+  transform: translate3d(86%, 0, 0);
+}
