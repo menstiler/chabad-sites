@@ -294,6 +294,9 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
   text-align: center;
   padding: 40px 0;
   font-size: 20px;
+  line-height: 35px;
+  width: 75%;
+  margin: 0 auto;
 }
 
 .chabad_description_box .action {
@@ -330,6 +333,7 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
   .chabad_description_box .text {
     line-height: 30px;
     padding: 0 10px;
+    width: 100%;
   }
 }
 .promos-container {

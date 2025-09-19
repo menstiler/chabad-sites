@@ -3,7 +3,7 @@ const textWidgetHtml = `<div class="chabad_description_box">
 <h5>We are here to serve you!</h5> 
 </div>
 <div class="text">
-Chabad of Islip is your home on the Great South Bay to experience the beauty, warmth and  joy of Judaism
+Chabad of Islip is your home on the Great South Bay to experience the beauty, warmth and joy of Judaism - Join us for the High Holidays!
 </div>
 <div class="action">
 <a href="/2053758" class='learn-more-btn'>Learn More</a>
