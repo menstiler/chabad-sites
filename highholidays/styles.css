@@ -50,6 +50,10 @@
   margin: 10px auto;
 }
 
+.chabad_navigator_bar ul li a.arrow {
+  padding-right: 26px !important;
+}
+
 .cco_templateless_page #chabad_main_content {
   background-image: inherit;
 }
