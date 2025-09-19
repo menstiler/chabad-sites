@@ -54,6 +54,10 @@
   padding-right: 26px !important;
 }
 
+.mobile .donation_campaign ~ #BodyContainer {
+  padding-top: 0 !important;
+}
+
 .cco_templateless_page #chabad_main_content {
   background-image: inherit;
 }
