@@ -99,7 +99,7 @@ div.chabad_left_column {
   width: 100%;
 }
 a.parent.arrow:hover {
-  background: url(/images/shluchim/minisites/down_triangle_black.gif) right 5px
+  background: url(https://w2.chabad.org/images/shluchim/minisites/down_triangle_black.gif) right 5px
     center no-repeat;
 }
 
@@ -319,11 +319,11 @@ div#chabad_main_content {
     margin-bottom: 25px;
   }
   body.mobile .chabad_navigator_bar #menu .item.heading a {
-    background: url("/images/shluchim/minisites/down_triangle_white.gif")
+    background: url("https://w2.chabad.org/images/shluchim/minisites/down_triangle_white.gif")
       no-repeat right center;
   }
   body.mobile .chabad_navigator_bar .sub_menu_toggle {
-    background: url(/images/shluchim/minisites/down_triangle_white.gif)
+    background: url(https://w2.chabad.org/images/shluchim/minisites/down_triangle_white.gif)
       no-repeat center;
   }
   body.mobile div.chabad_navigator_bar #menu .sub_menu ul {
@@ -339,7 +339,7 @@ div#chabad_main_content {
     width: 100%;
   }
   .cco_templateless_page #chabad_main_content {
-    background-image: url(/images/Shluchim/minisites/themes/Generic_New/abstract2.jpg);
+    background-image: url(https://w2.chabad.org/images/Shluchim/minisites/themes/Generic_New/abstract2.jpg);
     background-size: contain;
     background-color: rgba(255, 255, 255, 0.7);
   }
