@@ -1030,6 +1030,17 @@ body.home .promo_slider.v380 .cycle-caption {
 
 /* site wide ticker */
 
+.donation_campaign.highholidays .col1 a.donate_link {
+  font-family: var(--secondary-font);
+  font-weight: 800;
+  font-size: 19px;
+  font-style: italic;
+  color: var(--primary-color);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
 .donation_campaign .wrapper {
   width: 100% !important;
 }

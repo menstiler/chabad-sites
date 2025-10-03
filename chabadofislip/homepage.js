@@ -154,7 +154,7 @@ function setUpSiteWideTicker() {
   <div class="wrapper clearfix">
 <div class="col1">
 <div class="banner">
-<a class="donate_link js-header-donate js-banner-donate-link" href="/6974961"><img src="https://w2.chabad.org/images/global/spacer.gif" alt="High Holiday Appeal" title="High Holiday Appeal"></a></div>
+<a class="donate_link js-header-donate js-banner-donate-link" href="/6974961">High Holiday Appeal</a></div>
 </div>
 <div class="col2 title_container desktop-only">
 <div class="large"><a class="donate_link js-header-donate js-banner-donate-link" href="/6974961">
