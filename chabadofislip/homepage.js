@@ -229,7 +229,6 @@ Please Partner with Chabad of Islip - All donations being matched!
 function init() {
   setUpScrolling();
   setUpSearch();
-  setUpSiteWideTicker();
 
   const firstFooter = document.querySelector("#footer");
   if (firstFooter) {
