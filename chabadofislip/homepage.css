@@ -1237,8 +1237,8 @@ body
   .fs-ticker-countdown-container
   .fs-countdown-widget
   .fs-countdown-unit
-  .fs-countdown-description
-  body
+  .fs-countdown-description,
+body
   #new-campaign-ticker-wrapper
   .fs-ticker-container
   .fs-ticker-countdown-container
@@ -1293,7 +1293,7 @@ body
   .fs-ticker-container
   .fs-ticker-countdown-container
   .fs-ticker-countdown-heading:after {
-  background: url(/images/templates/fundraising/Timer-Back-Ticker.png) #ed6c02 !important;
+  background-color: #ed6c02;
 }
 
 body
