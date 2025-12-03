@@ -1197,6 +1197,7 @@ body.home .promo_slider.v380 .cycle-caption {
 body #new-campaign-ticker-wrapper .fs-ticker-container {
   background: #ed6c02 !important;
 }
+
 body #new-campaign-ticker-wrapper .fs-bonus-badge,
 body
   #new-campaign-ticker-wrapper
@@ -1208,6 +1209,13 @@ body #new-campaign-ticker-wrapper .fs-ticker-container .fs-btn {
   background: #000650 !important;
 }
 
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-countdown-container
+  .fs-countdown-widget
+  .fs-countdown-unit
+  .fs-countdown-description,
 body
   #new-campaign-ticker-wrapper
   .fs-ticker-container
@@ -1263,6 +1271,29 @@ body
   .fs-ticker-container
   .fs-ticker-heading-container {
   min-height: 187px;
+}
+
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-countdown-container
+  .fs-ticker-countdown-heading:after {
+  background: url(/images/templates/fundraising/Timer-Back-Ticker.png) #ed6c02 !important;
+}
+
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-heading-container:before {
+  background: 0 0 !important;
+}
+
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-heading-container
+  .fs-ticker-heading {
+  display: none;
 }
 
 @media screen and (max-width: 650px) {
