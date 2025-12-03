@@ -1212,6 +1212,21 @@ body #new-campaign-ticker-wrapper .fs-ticker-container .fs-btn {
 body
   #new-campaign-ticker-wrapper
   .fs-ticker-container
+  .fs-ticker-goal-container
+  .fs-ticker-goal,
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-campaign-info-container
+  .fs-campaign-end-text,
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-campaign-info-container
+  .fs-campaign-end-title,
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
   .fs-ticker-countdown-container
   .fs-countdown-widget
   .fs-countdown-unit
