@@ -1187,3 +1187,89 @@ body.home .promo_slider.v380 .cycle-caption {
   -webkit-transform: translate3d(86%, 0, 0);
   transform: translate3d(86%, 0, 0);
 }
+
+/* chabadone fundraising site wide ticker */
+
+#new-campaign-ticker-wrapper ~ .mobile_wrapper_container #mobile_content {
+  padding-top: 0 !important;
+}
+
+body #new-campaign-ticker-wrapper .fs-ticker-container {
+  background: #ed6c02 !important;
+}
+body #new-campaign-ticker-wrapper .fs-bonus-badge,
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-goal-container
+  .fs-ticker-goal-graph
+  .fs-goal-graph-fill,
+body #new-campaign-ticker-wrapper .fs-ticker-container .fs-btn {
+  background: #000650 !important;
+}
+
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-countdown-container
+  .fs-countdown-widget
+  .fs-countdown-unit
+  .fs-countdown-description
+  body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-countdown-container
+  .fs-countdown-widget
+  .fs-countdown-sep,
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-countdown-container
+  .fs-countdown-widget
+  .fs-countdown-unit
+  .fs-countdown-number,
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-countdown-container
+  .fs-ticker-countdown-heading,
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-goal-container
+  .fs-ticker-goal
+  b,
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-goal-container
+  .fs-ticker-goal-complete-container
+  div {
+  color: #000650 !important;
+}
+
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-goal-container
+  .fs-ticker-goal-graph
+  .fs-goal-graph-fill
+  .fs-goal-graph-fill-bonus {
+  background: #bf9a3d !important;
+}
+
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-heading-container {
+  min-height: 187px;
+}
+
+@media screen and (max-width: 650px) {
+  body
+    #new-campaign-ticker-wrapper
+    .fs-ticker-container
+    .fs-ticker-heading-container {
+    min-height: 127px;
+  }
+}
