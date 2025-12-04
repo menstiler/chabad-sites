@@ -226,9 +226,112 @@ Please Partner with Chabad of Islip - All donations being matched!
   }
 }
 
+function setUpFundraisingTicker() {
+  const container = document.querySelector(
+    ".col-md-5.fs-ticker-heading-container"
+  );
+  if (!container) {
+    console.error("Container not found!");
+    return;
+  }
+
+  // ----------- CONFIG -----------
+  const images = [
+    "/media/images/1346/Lnln13461866.jpg",
+    "/media/images/1346/KkSI13461862.jpg",
+    "/media/images/1346/sJSe13461810.jpg",
+  ];
+
+  // const mobileImages = [
+  //   "/media/images/1346/sLXJ13462540.jpg",
+  //   "/media/images/1346/OicD13462542.jpg",
+  //   "/media/images/1346/irnv13462546.jpg"
+  // ];
+
+  // const isMobile = window.innerWidth < 768;
+  // const images = isMobile ? mobileImages : desktopImages;
+
+  const SLIDE_INTERVAL = 3000;
+  const SLIDE_DURATION = 600; // best smooth speed
+  // --------------------------------
+
+  // Remove all old background styling
+  container.style.background = "none";
+  container.style.backgroundImage = "none";
+
+  // Prepare container for slider
+  container.style.position = "relative";
+  container.style.overflow = "hidden";
+
+  // Read original height so slides don’t resize
+  const fixedHeight = container.offsetHeight;
+  container.style.height = fixedHeight + "px";
+
+  // Create two slide layers
+  const slideA = document.createElement("div");
+  const slideB = document.createElement("div");
+
+  [slideA, slideB].forEach((slide) => {
+    Object.assign(slide.style, {
+      position: "absolute",
+      top: 0,
+      left: "0%",
+      width: "100%",
+      height: "100%",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      transition: `transform ${SLIDE_DURATION}ms ease-in-out`,
+    });
+  });
+
+  container.appendChild(slideA);
+  container.appendChild(slideB);
+
+  let index = 0;
+  slideA.style.backgroundImage = `url(${images[index]})`;
+
+  let active = slideA;
+  let next = slideB;
+
+  function slide() {
+    index = (index + 1) % images.length;
+
+    // Prepare next slide **off-screen to the right**
+    next.style.backgroundImage = `url(${images[index]})`;
+    next.style.transform = "translateX(100%)";
+
+    // Force reflow to ensure animation triggers reliably
+    void next.offsetWidth;
+
+    // Animate both: active slides left, next enters
+    active.style.transform = "translateX(-100%)";
+    next.style.transform = "translateX(0%)";
+
+    // Swap roles after animation completes
+    const temp = active;
+    active = next;
+    next = temp;
+
+    // Reset old slide's transform instantly for next round
+    setTimeout(() => {
+      next.style.transition = "none";
+      next.style.transform = "translateX(100%)";
+      void next.offsetWidth;
+      next.style.transition = `transform ${SLIDE_DURATION}ms ease-in-out`;
+    }, SLIDE_DURATION);
+  }
+
+  // Set initial position of B
+  next.style.transform = "translateX(100%)";
+
+  setInterval(slide, SLIDE_INTERVAL);
+}
+
 function init() {
   setUpScrolling();
   setUpSearch();
+  setUpFundraisingTicker();
 
   const firstFooter = document.querySelector("#footer");
   if (firstFooter) {
