@@ -1312,8 +1312,12 @@ body
   font-size: 1.1em;
 }
 
+body.mobile #new-campaign-ticker-wrapper .fs-ticker-heading-small {
+  display: block !important;
+  font-size: 0.6em;
+}
+
 @media (max-width: 990px) {
-  body.mobile #new-campaign-ticker-wrapper .fs-ticker-heading-small,
   .fs-ticker-heading-small {
     display: block !important;
     font-size: 0.6em;
