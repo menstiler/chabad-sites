@@ -1295,3 +1295,19 @@ body
   .fs-ticker-heading-container:before {
   background: 0 0 !important;
 }
+
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-heading-container {
+  background-image: none !important;
+}
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-heading-container
+  .fs-ticker-heading
+  .fs-ticker-heading-small {
+  color: #000650 !important;
+  font-size: 1.1em;
+}
