@@ -227,10 +227,19 @@ Please Partner with Chabad of Islip - All donations being matched!
 }
 
 function setUpFundraisingTicker() {
-  const smallText = document.querySelector(".fs-ticker-heading-small");
-  if (smallText)
-    smallText.textContent =
-      "Say Yes to Community, Say Yes to Connection, Say Yes to Continuity.";
+  const observer = new MutationObserver(() => {
+    const el = document.querySelector(".fs-ticker-heading-container");
+    if (el) {
+      observer.disconnect();
+
+      const smallText = document.querySelector(".fs-ticker-heading-small");
+      if (smallText)
+        smallText.textContent =
+          "Say Yes to Community, Say Yes to Connection, Say Yes to Continuity.";
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
 
   const container = document.querySelector(
     ".col-md-5.fs-ticker-heading-container"
