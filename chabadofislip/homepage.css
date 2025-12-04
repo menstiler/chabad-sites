@@ -1267,7 +1267,13 @@ body
   .fs-ticker-container
   .fs-ticker-goal-container
   .fs-ticker-goal-complete-container
-  div {
+  div,
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-heading-container
+  .fs-ticker-heading
+  .fs-ticker-heading-small {
   color: #000650 !important;
 }
 
@@ -1284,13 +1290,6 @@ body
 body
   #new-campaign-ticker-wrapper
   .fs-ticker-container
-  .fs-ticker-heading-container {
-  min-height: 187px;
-}
-
-body
-  #new-campaign-ticker-wrapper
-  .fs-ticker-container
   .fs-ticker-countdown-container
   .fs-ticker-countdown-heading:after {
   background-color: #ed6c02;
@@ -1301,21 +1300,4 @@ body
   .fs-ticker-container
   .fs-ticker-heading-container:before {
   background: 0 0 !important;
-}
-
-body
-  #new-campaign-ticker-wrapper
-  .fs-ticker-container
-  .fs-ticker-heading-container
-  .fs-ticker-heading {
-  display: none;
-}
-
-@media screen and (max-width: 650px) {
-  body
-    #new-campaign-ticker-wrapper
-    .fs-ticker-container
-    .fs-ticker-heading-container {
-    min-height: 127px;
-  }
 }

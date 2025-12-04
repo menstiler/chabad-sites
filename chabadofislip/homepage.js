@@ -331,7 +331,7 @@ function setUpFundraisingTicker() {
 function init() {
   setUpScrolling();
   setUpSearch();
-  setUpFundraisingTicker();
+  // setUpFundraisingTicker();
 
   const firstFooter = document.querySelector("#footer");
   if (firstFooter) {
