@@ -1267,13 +1267,7 @@ body
   .fs-ticker-container
   .fs-ticker-goal-container
   .fs-ticker-goal-complete-container
-  div,
-body
-  #new-campaign-ticker-wrapper
-  .fs-ticker-container
-  .fs-ticker-heading-container
-  .fs-ticker-heading
-  .fs-ticker-heading-small {
+  div {
   color: #000650 !important;
 }
 
