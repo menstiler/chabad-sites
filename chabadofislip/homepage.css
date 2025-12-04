@@ -1314,12 +1314,12 @@ body
 
 body.mobile #new-campaign-ticker-wrapper .fs-ticker-heading-small {
   display: block !important;
-  font-size: 0.6em;
+  font-size: 0.6em !important;
 }
 
 @media (max-width: 990px) {
   .fs-ticker-heading-small {
     display: block !important;
-    font-size: 0.6em;
+    font-size: 0.6em !important;
   }
 }
