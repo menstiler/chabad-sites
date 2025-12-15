@@ -59,6 +59,14 @@
           required="required"
         ></textarea
         ><br />
+        <div style="display: none">
+          <input
+            type="text"
+            name="website"
+            tabindex="-1"
+            autocomplete="off"
+          />
+        </div>
         <input
           type="hidden"
           name="g-recaptcha-response"
@@ -103,6 +111,7 @@
 
       function handleFormSubmit(event) {
         event.preventDefault();
+
         grecaptcha.ready(function () {
           grecaptcha
             .execute("6LdWyMcrAAAAAE7tyr99HFeOxAnStqrZC_Niy6sp", {
@@ -124,7 +133,13 @@
                 phone: form.phone.value,
                 message: form.message.value,
                 recaptchaToken: token,
+                website: form.website.value,
               };
+
+              if (formData.website && formData.website.trim() !== "") {
+                button.textContent = "Send";
+                alert("Failed to send message. Please try again.");
+              }
 
               fetch(EMAIL_API_URL, {
                 method: "POST",
