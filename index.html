@@ -139,7 +139,7 @@
                 message: form.message.value,
                 recaptchaToken: token,
                 website: form.website.value,
-                formStart: form.formStart.value,
+                formStart: Number(form.formStart.value),
               };
 
               if (formData.website && formData.website.trim() !== "") {
