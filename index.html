@@ -59,6 +59,11 @@
           required="required"
         ></textarea
         ><br />
+        <input
+          type="hidden"
+          name="formStart"
+          value="{Date.now()}"
+        />
         <div style="display: none">
           <input
             type="text"
@@ -134,11 +139,13 @@
                 message: form.message.value,
                 recaptchaToken: token,
                 website: form.website.value,
+                formStart: form.formStart.value,
               };
 
               if (formData.website && formData.website.trim() !== "") {
                 button.textContent = "Send";
                 alert("Failed to send message. Please try again.");
+                return;
               }
 
               fetch(EMAIL_API_URL, {
