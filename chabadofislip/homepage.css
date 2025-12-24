@@ -1323,3 +1323,11 @@ body.mobile #new-campaign-ticker-wrapper .fs-ticker-heading-small {
     font-size: 0.6em !important;
   }
 }
+
+body
+  #new-campaign-ticker-wrapper
+  .fs-ticker-container
+  .fs-ticker-countdown-container
+  .fs-ticker-countdown-heading:before {
+  display: none !important;
+}

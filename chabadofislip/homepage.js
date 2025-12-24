@@ -231,6 +231,10 @@ function setUpFundraisingTicker() {
     const el = document.querySelector(".fs-ticker-heading-container");
     if (el) {
       observer.disconnect();
+      document.querySelector(".fs-countdown-widget").style.display = "none";
+
+      document.querySelector(".fs-ticker-countdown-heading").innerText =
+        "Donations being doubled till December 31";
 
       const smallText = document.querySelector(".fs-ticker-heading-small");
       if (smallText)
