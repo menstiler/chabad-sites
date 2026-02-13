@@ -374,7 +374,7 @@ function init() {
 
     if (subscribeContainer) {
       const subscribeContainerForm = document.querySelector(
-        "#HeaderSubscribeContainer form",
+        "#HeaderSubscribeContainer",
       );
       subscribeContainerForm.classList.remove("subscribe_box");
       subscribeContainerForm.classList.add("bottom_subscribe_box");
