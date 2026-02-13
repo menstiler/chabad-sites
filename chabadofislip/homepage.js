@@ -91,7 +91,7 @@ const mobileSubscribeWidget = `<form autocomplete="off" class="bottom_subscribe_
 
 function setUpSearch() {
   jQuery("#tabContentMain").append(
-    '<div class="search_menu_item search-trigger-container"><a href="#" class="search-trigger"><i class="fa fa-search"></i></a></div>'
+    '<div class="search_menu_item search-trigger-container"><a href="#" class="search-trigger"><i class="fa fa-search"></i></a></div>',
   );
   jQuery("#tabContentMain").append(jQuery(".cco_search_header"));
   jQuery("#tabContentMain").addClass("js-search-added");
@@ -170,11 +170,11 @@ Please Partner with Chabad of Islip - All donations being matched!
   </div>
   <div class="bottom">  
   <div class="label">Thank you to our latest donors:</div>
-  <div id="TICKER" class="ticker"></div></div></div></div>`
+  <div id="TICKER" class="ticker"></div></div></div></div>`,
     );
 
     fetch(
-      "https://api.menstiler.com/?id=1DwHmQF6J60S126sWqG_-kpxpRcgO4201IjHgAqGeHdU"
+      "https://api.menstiler.com/?id=1DwHmQF6J60S126sWqG_-kpxpRcgO4201IjHgAqGeHdU",
     )
       .then((response) => response.json())
       .then((data) => {
@@ -187,8 +187,8 @@ Please Partner with Chabad of Islip - All donations being matched!
             donorDiv.innerHTML = `
           <div class="name">
               ${donor[0]} - <b>$${donor[1]}</b>${
-              donor[2] ? " - " + donor[2] : ""
-            }
+                donor[2] ? " - " + donor[2] : ""
+              }
 
           </div>
         `;
@@ -232,7 +232,6 @@ function setUpFundraisingTicker() {
     if (el) {
       observer.disconnect();
       document.querySelector(".fs-countdown-widget").style.display = "none";
-
       document.querySelector(".fs-ticker-countdown-heading").innerText =
         "Donations being doubled till December 31";
 
@@ -246,7 +245,7 @@ function setUpFundraisingTicker() {
   observer.observe(document.body, { childList: true, subtree: true });
 
   const container = document.querySelector(
-    ".col-md-5.fs-ticker-heading-container"
+    ".col-md-5.fs-ticker-heading-container",
   );
   if (!container) {
     console.error("Container not found!");
@@ -349,7 +348,7 @@ function setUpFundraisingTicker() {
 function init() {
   setUpScrolling();
   setUpSearch();
-  setUpFundraisingTicker();
+  // setUpFundraisingTicker();
 
   const firstFooter = document.querySelector("#footer");
   if (firstFooter) {
@@ -370,12 +369,12 @@ function init() {
 
     // subscription
     const subscribeContainer = document.getElementById(
-      "HeaderSubscribeContainer"
+      "HeaderSubscribeContainer",
     );
 
     if (subscribeContainer) {
       const subscribeContainerForm = document.querySelector(
-        "#HeaderSubscribeContainer form"
+        "#HeaderSubscribeContainer form",
       );
       subscribeContainerForm.classList.remove("subscribe_box");
       subscribeContainerForm.classList.add("bottom_subscribe_box");
