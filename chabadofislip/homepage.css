@@ -40,7 +40,8 @@ body:not(.home).mobile div#header {
 }
 
 div.promos-bg {
-  background: linear-gradient(to bottom, #ffffff 0, rgba(255, 255, 255, 0.5)),
+  background:
+    linear-gradient(to bottom, #ffffff 0, rgba(255, 255, 255, 0.5)),
     url(https://w2.chabad.org/media/images/1329/utDJ13295443.jpg);
 }
 
@@ -356,7 +357,8 @@ body.cco_body #tabContentMain .co_submenu_container .co_column a {
 .promo-box {
   background-color: #e2d2d0;
   padding: 1.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease;
   text-align: center;
@@ -576,6 +578,18 @@ div#SubscribeFormContainer {
   width: 100%;
 }
 
+.widget-1.subscribe {
+  background: #ececec;
+  border: none;
+  margin: 0;
+  padding: 50px 0;
+}
+
+.widget-1.subscribe > .wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
 .home.mobile
   #footer
   .subscribe-form
@@ -597,7 +611,8 @@ div#SubscribeFormContainer {
 .home.mobile #footer .subscribe-form div.co_form_container + .success,
 .home div#HeaderSubscribeContainer div.co_form_container + .success,
 .home form.bottom_subscribe_box div.co_form_container + .success,
-.home form.bottom_subscribe_box + .success {
+.home form.bottom_subscribe_box + .success,
+.home .subscribe small {
   font-size: 25px;
   color: var(--primary-color);
   font-weight: bold;
@@ -613,16 +628,23 @@ div#SubscribeFormContainer {
 .home form.bottom_subscribe_box input.mobile_input_field,
 .home form.bottom_subscribe_box input#Fname,
 .home form.bottom_subscribe_box input#Lname,
-.home form.bottom_subscribe_box input#SubscribeEmail {
+.home form.bottom_subscribe_box input#Email {
   font-family: var(--primary-font) !important;
-  width: 25%;
+  width: 20%;
   border-radius: 0;
   border: 0;
   padding: 10px;
   height: 50px;
   background: rgba(255, 255, 255, 0.8);
   font-size: 15px;
+  box-shadow: none;
+  font-weight: normal;
 }
+
+.home form.bottom_subscribe_box input#Email {
+  width: 37%;
+}
+
 .home.mobile #footer .subscribe-form div.co_form_container .form_group,
 .home div#HeaderSubscribeContainer div.co_form_container .form_group,
 .home form.bottom_subscribe_box div.co_form_container .form_group,
@@ -631,6 +653,7 @@ div#SubscribeFormContainer {
   width: 45%;
   gap: 1rem;
 }
+.home.mobile form.bottom_subscribe_box input#Email,
 .home.mobile #footer .subscribe-form div.co_form_container input#SubscribeEmail,
 .home div#HeaderSubscribeContainer div.co_form_container input#SubscribeEmail,
 .home form.bottom_subscribe_box div.co_form_container input#SubscribeEmail,
@@ -648,20 +671,30 @@ div#SubscribeFormContainer {
 .home div#HeaderSubscribeContainer div.co_form_container button#CoButton,
 .home form.bottom_subscribe_box input#CoButton,
 .home form.bottom_subscribe_box button#CoButton,
+.home form.bottom_subscribe_box input.CoButton,
 .home.mobile #footer .subscribe-form button#CoButton {
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
   background: transparent;
   transition: background 0.4s;
-  height: 50px;
+  height: 44px;
+  width: 20%;
   font-size: 16px;
   letter-spacing: 2px;
   text-transform: uppercase;
   border-radius: 0;
 }
+
+.home.mobile form.bottom_subscribe_box input.CoButton {
+  width: 99%;
+  margin: 0;
+  padding: 0;
+}
+
 .home.mobile #footer .subscribe-form div.co_form_container button#CoButton span,
 .home div#HeaderSubscribeContainer div.co_form_container button#CoButton span,
 .home form.bottom_subscribe_box input#CoButton span,
+.home form.bottom_subscribe_box input.CoButton,
 .home form.bottom_subscribe_box button#CoButton span {
   font-family: var(--secondary-font) !important;
 }
@@ -669,6 +702,7 @@ div#SubscribeFormContainer {
 .home div#HeaderSubscribeContainer div.co_form_container button#CoButton:hover,
 .home form.bottom_subscribe_box input#CoButton:hover,
 .home form.bottom_subscribe_box button#CoButton:hover,
+.home form.bottom_subscribe_box input.CoButton:hover,
 .home.mobile #footer .subscribe-form button#CoButton:hover {
   background: var(--primary-color);
   color: white;
@@ -869,7 +903,8 @@ a.cycle-nextNav {
 }
 
 .slides {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
@@ -947,10 +982,42 @@ table.main_menu_container.first.global {
   background: #ececec;
 }
 
+.subscribe .widget_header,
+.subscribe form small {
+  display: none;
+}
+
 .home form.bottom_subscribe_box .field-row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
+}
+
+.home.mobile form.bottom_subscribe_box fieldset {
+  flex-direction: column;
+}
+
+.home form.bottom_subscribe_box fieldset {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.subscribe form fieldset input {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 0;
+  border: 2px solid transparent;
+  color: #317cb8;
+  box-shadow: none;
+  text-shadow: none;
+  width: 20%;
+  height: 50px;
+  /* padding: 10px 15px; */
+  font-size: 16px;
+  text-transform: none;
+  /* margin: 1px; */
 }
 
 .home form.bottom_subscribe_box .field-row input.mobile_input_field {

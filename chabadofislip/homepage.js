@@ -368,18 +368,14 @@ function init() {
     parentElement.insertAdjacentHTML("beforeBegin", textWidgetHtml);
 
     // subscription
-    const subscribeContainer = document.getElementById(
-      "HeaderSubscribeContainer",
-    );
+    const subscribeContainer = document.querySelector(".subscribe");
+    subscribeContainer.classList.remove("v280", "feed", "custom");
 
-    if (subscribeContainer) {
-      const subscribeContainerForm = document.querySelector(
-        "#HeaderSubscribeContainer",
-      );
-      subscribeContainerForm.classList.remove("subscribe_box");
-      subscribeContainerForm.classList.add("bottom_subscribe_box");
-      parentElement.after(subscribeContainer);
-    }
+    const subscribeContainerForm = document.querySelector(".subscribe form");
+    subscribeContainerForm.classList.add("bottom_subscribe_box");
+    jQuery('.subscribe form input[type="submit"]').removeClass("buttonStyle1");
+    jQuery('.subscribe form input[type="submit"]').addClass("CoButton");
+    parentElement.after(subscribeContainer);
 
     parentElement.insertAdjacentHTML("afterend", promosWidgetHtml);
 
@@ -389,6 +385,26 @@ function init() {
 
     // small promos
     jQuery(".sneak-peek-container").hide();
+
+    // other widgets
+    jQuery(".candlelighting").hide();
+    jQuery(".jli_feed").hide();
+    jQuery(".parsha").hide();
+    jQuery(".upcoming_holiday").hide();
+    jQuery(".upcoming_events").hide();
+    jQuery(".chabad_updates").hide();
+
+    jQuery(".widget-4").attr("class", function (i, className) {
+      return className.replace(/\bwidget-4\b/g, "widget-1");
+    });
+
+    jQuery(".g640").attr("class", function (i, className) {
+      return className.replace(/\bg640\b/g, "g960");
+    });
+
+    jQuery(".v260").attr("class", function (i, className) {
+      return className.replace(/\bv260\b/g, "v380");
+    });
   }
 }
 
