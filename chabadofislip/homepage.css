@@ -929,6 +929,14 @@ body.cco_body .site_title {
   background-size: cover !important;
 }
 
+@media (max-width: 1360px) {
+  body.cco_body .site_title {
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+  }
+}
+
 .dir_ltr.mobile .promo_slider .cycle-directionNav a.cycle-prevNav,
 .dir_ltr.mobile .promo_slider .cycle-directionNav a.cycle-nextNav {
   background: none !important;
