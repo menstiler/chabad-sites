@@ -85,7 +85,13 @@ function setUpMenu() {
   const socialsContainer = document.querySelector(".socials-container");
   const cloneLogo = headerLogo.cloneNode(true);
   const cloneSocials = socialsContainer.cloneNode(true);
-
+  if (window.innerWidth <= 768) {
+    const headerBtn = document.querySelector(
+      ".sticky-top .item.parent:last-child",
+    );
+    const cloneHeaderBtn = headerBtn.cloneNode(true);
+    headerLogo.insertAdjacentElement("afterend", cloneHeaderBtn);
+  }
   function toggleMobileMenu() {
     burgerMenu.classList.toggle("active");
 
