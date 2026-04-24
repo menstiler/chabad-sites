@@ -1,3 +1,5 @@
+const REGISTER_PAGE = 7329214;
+
 function setUpScrolling() {
   const header = document.querySelector(".sticky-top");
 
@@ -85,7 +87,10 @@ function setUpMenu() {
   const socialsContainer = document.querySelector(".socials-container");
   const cloneLogo = headerLogo.cloneNode(true);
   const cloneSocials = socialsContainer.cloneNode(true);
-  if (window.innerWidth <= 768) {
+  if (
+    window.innerWidth <= 768 &&
+    !window.location.pathname.includes(REGISTER_PAGE)
+  ) {
     const headerBtn = document.querySelector(
       ".sticky-top .item.parent:last-child",
     );
@@ -143,13 +148,15 @@ function setUpMenu() {
 }
 
 function setUpListenerForSubmit() {
-  document
-    .querySelector('input[name="SubmitCCO"]')
-    .addEventListener("click", (e) => {
+  const contactForm = document.querySelector('input[name="SubmitCCO"]');
+
+  if (contactForm) {
+    contactForm.addEventListener("click", (e) => {
       if (e.target.form.checkValidity()) {
         e.target.value = "Please Wait...";
       }
     });
+  }
 }
 
 function setUpAccordion() {
@@ -180,23 +187,44 @@ function setUpReadMore() {
       ".statement-container .row:nth-child(n+2)",
     );
 
-    btn.innerHTML = readMoreBtn;
+    if (btn) {
+      btn.innerHTML = readMoreBtn;
+      btn.addEventListener("click", () => {
+        const isOpen = btn.classList.toggle("expanded");
+        btn.innerHTML = isOpen ? "<a>Read less</a>" : readMoreBtn;
 
-    btn.addEventListener("click", () => {
-      const isOpen = btn.classList.toggle("expanded");
-      btn.innerHTML = isOpen ? "<a>Read less</a>" : readMoreBtn;
-
-      readMoreTxt.forEach((container) => {
-        container.classList.toggle("show");
+        readMoreTxt.forEach((container) => {
+          container.classList.toggle("show");
+        });
       });
-    });
+    }
   }
 }
 
 function setUpFooter() {
-  const footerBtn = document.querySelector("footer .item.parent:last-child");
-  const container = document.querySelector("footer .right-column .logo");
-  container.after(footerBtn);
+  if (!window.location.pathname.includes(REGISTER_PAGE)) {
+    const footerBtn = document.querySelector("footer .item.parent:last-child");
+    const container = document.querySelector("footer .right-column .logo");
+    container.after(footerBtn);
+  }
+}
+
+function setUpSlidingBanner() {
+  const slides = document.querySelectorAll(".banner img");
+  let index = 0;
+
+  if (!slides) return;
+  if (slides.length >= 2) {
+    setInterval(() => {
+      slides[index].classList.remove("active");
+
+      index = (index + 1) % slides.length;
+
+      slides[index].classList.add("active");
+    }, 6000);
+  } else {
+    slides[index].classList.add("active");
+  }
 }
 
 function init() {
@@ -208,6 +236,7 @@ function init() {
   setUpAccordion();
   setUpReadMore();
   setUpFooter();
+  setUpSlidingBanner();
 }
 
 if (document.readyState !== "loading") {
