@@ -164,14 +164,19 @@ function setUpAccordion() {
 
   items.forEach((item) => {
     const header = item.querySelector(".header");
+    const content = item.querySelector(".content");
 
     header.addEventListener("click", () => {
       const isActive = item.classList.contains("active");
 
-      items.forEach((i) => i.classList.remove("active"));
+      items.forEach((i) => {
+        i.classList.remove("active");
+        i.querySelector(".content").style.maxHeight = null;
+      });
 
       if (!isActive) {
         item.classList.add("active");
+        content.style.maxHeight = content.scrollHeight + "px";
       }
     });
   });
@@ -213,7 +218,7 @@ function setUpSlidingBanner() {
   const slides = document.querySelectorAll(".banner img");
   let index = 0;
 
-  if (!slides) return;
+  if (!slides.length) return;
   if (slides.length >= 2) {
     setInterval(() => {
       slides[index].classList.remove("active");
@@ -221,7 +226,7 @@ function setUpSlidingBanner() {
       index = (index + 1) % slides.length;
 
       slides[index].classList.add("active");
-    }, 6000);
+    }, 3000);
   } else {
     slides[index].classList.add("active");
   }
