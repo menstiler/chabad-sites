@@ -2013,3 +2013,44 @@ footer .right-column {
     width: 3em;
   }
 }
+
+.section_branch .master-content-wrapper {
+  display: flex;
+  background-color: #626262;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+  background-position: center;
+  background-blend-mode: multiply;
+  align-items: center;
+
+  &.alef-beis {
+    background-image: url(https://w2.chabad.org/media/images/1367/VlDl13674470.jpg) !important;
+  }
+
+  &.bar-mitzvah {
+    background-image: url(https://w2.chabad.org/media/images/1367/cOFO13674472.jpg) !important;
+  }
+
+  &.cheering {
+    background-image: url(https://w2.chabad.org/media/images/1367/qBwD13674480.jpg) !important;
+  }
+
+  &.playing {
+    background-image: url(https://w2.chabad.org/media/images/1367/bvbf13674482.jpg) !important;
+  }
+
+  .article-header {
+    width: 100%;
+    background: transparent;
+    text-align: center;
+    .article-header__title {
+      font-size: 30pt;
+      color: #fff;
+    }
+  }
+}
+
+.section_branch article.content {
+  padding-top: 50px;
+}

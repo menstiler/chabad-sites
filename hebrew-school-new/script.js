@@ -232,6 +232,69 @@ function setUpSlidingBanner() {
   }
 }
 
+function setUpArticleBackgrounds() {
+  const titleContainer = document.querySelector(".master-content-wrapper");
+
+  const pathGroups = {
+    about: ["7329209", "7333872", "7334571", "7334572", "7334573"],
+    curriculum: [
+      "7329210",
+      "7334575",
+      "7334576",
+      "7334577",
+      "7334719",
+      "7334578",
+    ],
+    barMitzvah: ["7329211", "7334579", "7334580"],
+    photos: ["7329212"],
+    events: ["7329213"],
+    register: ["7329214"],
+    calendar: ["7334724"],
+  };
+
+  const pathname = window.location.pathname;
+
+  let matchedGroup = null;
+  let matchedValue = null;
+
+  for (const [group, paths] of Object.entries(pathGroups)) {
+    const found = paths.find((p) => pathname.includes(p));
+    if (found) {
+      matchedGroup = group;
+      matchedValue = found;
+      break;
+    }
+  }
+  if (titleContainer && matchedGroup) {
+    switch (matchedGroup) {
+      case "about":
+        titleContainer.classList.add("cheering");
+        break;
+
+      case "curriculum":
+        titleContainer.classList.add("alef-beis");
+        break;
+      case "register":
+        titleContainer.classList.add("alef-beis");
+        break;
+      case "barMitzvah":
+        titleContainer.classList.add("bar-mitzvah");
+        break;
+      case "calendar":
+        titleContainer.classList.add("cheering");
+        break;
+      case "events":
+        titleContainer.classList.add("cheering");
+        break;
+      case "photos":
+        titleContainer.classList.add("playing");
+        break;
+      default:
+        break;
+    }
+  }
+}
+
 function init() {
   setUpScrolling();
   setUpMenu();
@@ -242,6 +305,7 @@ function init() {
   setUpReadMore();
   setUpFooter();
   setUpSlidingBanner();
+  setUpArticleBackgrounds();
 }
 
 if (document.readyState !== "loading") {
