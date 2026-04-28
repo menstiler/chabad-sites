@@ -1,4 +1,12 @@
 const REGISTER_PAGE = 7329214;
+const AID_TO_CLASS = {
+  7334724: "cheering",
+  7329209: "cheering",
+  7329213: "cheering",
+  7329211: "bar-mitzvah",
+  7329210: "alef-beis",
+  7329212: "playing",
+};
 
 function setUpScrolling() {
   const header = document.querySelector(".sticky-top");
@@ -233,66 +241,27 @@ function setUpSlidingBanner() {
 }
 
 function setUpArticleBackgrounds() {
-  const titleContainer = document.querySelector(".master-content-wrapper");
+  const container = document.querySelector(".master-content-wrapper");
+  if (!container) return;
 
-  const pathGroups = {
-    about: ["7329209", "7333872", "7334571", "7334572", "7334573"],
-    curriculum: [
-      "7329210",
-      "7334575",
-      "7334576",
-      "7334577",
-      "7334719",
-      "7334578",
-    ],
-    barMitzvah: ["7329211", "7334579", "7334580"],
-    photos: ["7329212"],
-    events: ["7329213"],
-    register: ["7329214"],
-    calendar: ["7334724"],
-  };
+  const match = window.location.pathname.match(/\/aid\/(\d+)/);
+  const currentAid = match ? match[1] : null;
 
-  const pathname = window.location.pathname;
+  const activeParent = document.querySelector(".item.parent.selected");
+  const parentHref = activeParent?.querySelector("a")?.getAttribute("href");
 
-  let matchedGroup = null;
-  let matchedValue = null;
+  let key = null;
 
-  for (const [group, paths] of Object.entries(pathGroups)) {
-    const found = paths.find((p) => pathname.includes(p));
-    if (found) {
-      matchedGroup = group;
-      matchedValue = found;
-      break;
-    }
+  if (parentHref) {
+    const parentMatch = parentHref.match(/aid[=/](\d+)/);
+    key = parentMatch ? parentMatch[1] : null;
+  } else {
+    key = currentAid;
   }
-  if (titleContainer && matchedGroup) {
-    switch (matchedGroup) {
-      case "about":
-        titleContainer.classList.add("cheering");
-        break;
 
-      case "curriculum":
-        titleContainer.classList.add("alef-beis");
-        break;
-      case "register":
-        titleContainer.classList.add("alef-beis");
-        break;
-      case "barMitzvah":
-        titleContainer.classList.add("bar-mitzvah");
-        break;
-      case "calendar":
-        titleContainer.classList.add("cheering");
-        break;
-      case "events":
-        titleContainer.classList.add("cheering");
-        break;
-      case "photos":
-        titleContainer.classList.add("playing");
-        break;
-      default:
-        break;
-    }
-  }
+  const className = AID_TO_CLASS[key] || "alef-beis";
+
+  container.classList.add(className);
 }
 
 function init() {

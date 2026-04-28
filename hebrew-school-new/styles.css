@@ -15,8 +15,8 @@
   --header-height: 173px;
 }
 
-body.section_branch .bh,
-body.section_root .bh {
+body .bh,
+body .bh {
   display: block;
   top: 0;
   position: fixed;
@@ -30,18 +30,19 @@ body.section_root .bh {
 }
 
 @media (max-width: 768px) {
-  body.section_branch .co_body .article-body {
+  body .co_body .article-body {
     width: 100%;
     padding: 0 10px;
   }
 }
 
-body.section_branch .co_body .article-body img {
+body .co_body .article-body img {
   max-width: 100%;
 }
 
-body.section_branch .co_body #co_body_container {
+body:not(.section_root) .co_body #co_body_container {
   width: 1250px;
+  margin: 0 auto;
   @media (max-width: 1268px) and (min-width: 768px) {
     padding: 10px;
   }
@@ -50,13 +51,13 @@ body.section_branch .co_body #co_body_container {
   }
 }
 
-body.section_branch footer,
-body.section_branch .footer {
+body footer,
+body .footer {
   background-color: #f8f8f8;
 }
 
-body.section_branch div#chabad_main_content {
-  width: 100%;
+body:not(.section_root) div#chabad_main_content {
+  width: 100% !important;
   padding-top: var(--header-height);
 }
 
@@ -77,6 +78,8 @@ body.section_root div#chabad_main_content {
   width: 100% !important;
   margin-left: 0 !important;
 }
+
+.co_content_container,
 #BodyContainer {
   width: 100% !important;
 }
@@ -310,6 +313,8 @@ body.mobile .chabad_navigator_bar .chabad_menu_content li a {
   font-size: 18px;
   font-weight: 300;
   font-family: var(--primary-font);
+  /* position: relative; */
+
   a:hover {
     background-color: transparent;
     color: #fff;
@@ -317,7 +322,7 @@ body.mobile .chabad_navigator_bar .chabad_menu_content li a {
 }
 
 .action-section {
-  padding: 100px;
+  padding: 50px;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -326,12 +331,20 @@ body.mobile .chabad_navigator_bar .chabad_menu_content li a {
   align-items: center;
   flex-wrap: wrap;
 
+  &.social-actions {
+    padding: 20px !important;
+    justify-content: space-evenly;
+
+    @media (max-width: 768px) {
+      gap: 0;
+    }
+  }
   @media (max-width: 1268px) {
     flex-wrap: wrap;
   }
 
   @media (max-width: 768px) {
-    padding: 50px 0;
+    padding: 20px 0;
   }
 
   @media screen and (max-width: 768px) {
@@ -346,6 +359,41 @@ body.mobile .chabad_navigator_bar .chabad_menu_content li a {
 
   @media screen and (max-width: 768px) {
     margin: 30px;
+  }
+}
+
+.social-actions .section {
+  justify-content: center;
+  flex-direction: row;
+  padding: 0;
+  max-width: 25%;
+
+  @media (max-width: 768px) {
+    max-width: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      gap: 15px;
+      width: 300px;
+      justify-content: flex-start;
+    }
+    .button-container {
+      @media (max-width: 768px) {
+        text-align: left;
+      }
+    }
+    img {
+      @media (max-width: 768px) {
+        max-width: 100px !important;
+      }
+    }
   }
 }
 
@@ -385,7 +433,7 @@ body.mobile .chabad_navigator_bar .chabad_menu_content li a {
     margin: 0 auto;
     background-position: center;
     background-size: auto;
-    padding: 30px;
+    padding: 0 0 20px;
   }
 
   @media (max-width: 1268px) {
@@ -401,6 +449,9 @@ body.mobile .chabad_navigator_bar .chabad_menu_content li a {
 
   img {
     height: 125px;
+    @media (max-width: 768px) {
+      height: 75px;
+    }
   }
   h2 {
     font-size: 54px;
@@ -420,6 +471,7 @@ body.mobile .chabad_navigator_bar .chabad_menu_content li a {
 
 .purple-text {
   color: var(--primary-purple) !important;
+  font-family: var(--primary-font);
 }
 
 .blue-text {
@@ -670,6 +722,11 @@ p {
   line-height: 1.3 !important;
 }
 
+.co_body .content p {
+  font-family: var(--primary-font);
+  font-size: 17px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -832,6 +889,15 @@ div#chabad_head .chabad_navigator_bar {
   flex-direction: column;
   line-height: 2;
 
+  &.custom_separator {
+    display: none;
+  }
+  .sub_menu li {
+    padding: 4px 0;
+  }
+  .sub_menu a {
+    line-height: 20px;
+  }
   @media (max-width: 768px) {
     line-height: 30px;
 
@@ -855,6 +921,7 @@ div#chabad_head .chabad_navigator_bar {
   text-transform: uppercase;
   letter-spacing: 0.071em;
   transition: color 0.2s;
+  /* line-height: 20px; */
 
   &:hover {
     opacity: 50%;
@@ -969,7 +1036,7 @@ body.mobile .chabad_navigator_bar .sub_menu_toggle {
   }
 
   .footer-container #navigation li.parent:last-child {
-    display: none !important;
+    /* display: none !important; */
   }
 
   .sticky-top .chabad_navigator_bar:not(.active) li.item.parent:last-child {
@@ -1218,7 +1285,6 @@ body.mobile .chabad_navigator_bar .sub_menu_toggle {
 
 h1.article-header__title.js-article-title.js-page-title {
   font-family: var(--primary-font);
-  color: var(--primary-blue);
   text-transform: uppercase;
 
   @media (max-width: 768px) {
@@ -1340,7 +1406,7 @@ body .co_body .content .form-all p {
   font-family: var(--primary-font) !important;
 }
 
-.section_branch .co_body h3 {
+.co_body h3 {
   color: var(--primary-blue);
   font-family: var(--primary-font);
 }
@@ -1375,6 +1441,8 @@ body .co_body .content .form-all p {
   h3 {
     color: #fff;
     line-height: 1.6;
+    font-family: var(--primary-font);
+    font-weight: 700;
 
     @media (max-width: 768px) {
       line-height: 1.3;
@@ -1447,12 +1515,18 @@ body .co_body .content .form-all p {
 .recent-photos h2 {
   color: #fff !important;
   margin-bottom: 20px;
+  font-family: var(--primary-font);
 }
 
 .recent-photos .co_photo_gallery {
   display: flex;
   padding: 20px 0 20px;
   gap: 2rem;
+  flex-wrap: wrap;
+
+  a {
+    flex: 0 0 calc(20% - 26px);
+  }
 
   img {
     height: auto;
@@ -1604,10 +1678,10 @@ body .co_body .content .form-all p {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: rgb(0, 0, 0);
   cursor: pointer;
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: var(--primary-blue);
+  border: none;
 
   &:hover {
     background-color: rgb(31, 31, 31);
@@ -1816,7 +1890,7 @@ footer {
 .footer-container {
   display: flex;
   justify-content: space-around;
-  padding: 50px 0;
+  padding: 50px;
 
   @media (max-width: 1200px) and (min-width: 768px) {
     width: 100%;
@@ -1836,8 +1910,13 @@ footer {
 }
 
 footer #navigation.chabad_navigator_bar #menu {
-  display: block;
-  justify-content: center;
+  display: grid;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  /* gap: 0px; */
+  grid-template-columns: repeat(5, 1fr);
+  /* gap: 0; */
 }
 
 footer .sub_menu {
@@ -1862,6 +1941,7 @@ footer .sub_menu ul {
   footer #navigation a {
     display: block;
     text-align: left;
+    margin-bottom: 8px;
 
     &.sub_menu_toggle {
       display: none;
@@ -1908,6 +1988,20 @@ footer .sub_menu ul {
   background-color: var(--primary-blue);
   color: #fff;
   border-color: var(--primary-blue);
+  transition: background 0.4s;
+  letter-spacing: 2px;
+  padding: 12px 30px;
+  text-transform: uppercase;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+
+  &:hover {
+    color: var(--primary-color);
+    background: transparent;
+    border: 2px solid var(--primary-color);
+  }
 }
 
 .co_body .below-article__title {
@@ -1921,12 +2015,14 @@ footer .sub_menu ul {
 }
 
 .co_body .content-footer {
-  width: 50%;
+  @media (min-width: 1268px) {
+    width: 50%;
+  }
 
   @media (max-width: 768px) {
     width: 100%;
   }
-  )
+
   .bs-row {
     flex-direction: column;
   }
@@ -2014,7 +2110,7 @@ footer .right-column {
   }
 }
 
-.section_branch .master-content-wrapper {
+.master-content-wrapper {
   display: flex;
   background-color: #626262;
   background-size: cover;
@@ -2035,11 +2131,9 @@ footer .right-column {
   &.cheering {
     background-image: url(https://w2.chabad.org/media/images/1367/qBwD13674480.jpg) !important;
   }
-
   &.playing {
     background-image: url(https://w2.chabad.org/media/images/1367/bvbf13674482.jpg) !important;
   }
-
   .article-header {
     width: 100%;
     background: transparent;
@@ -2051,6 +2145,16 @@ footer .right-column {
   }
 }
 
-.section_branch article.content {
+article.content {
   padding-top: 50px;
+}
+
+.breadcrumbs__crumb,
+.breadcrumbs__divider {
+  color: var(--primary-blue);
+}
+
+.form-header-group {
+  margin-left: 0;
+  margin-right: 0;
 }
