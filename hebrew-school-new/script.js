@@ -1,13 +1,3 @@
-const REGISTER_PAGE = 7329214;
-const AID_TO_CLASS = {
-  7334724: "cheering",
-  7329209: "cheering",
-  7329213: "cheering",
-  7329211: "bar-mitzvah",
-  7329210: "alef-beis",
-  7329212: "playing",
-};
-
 function setUpScrolling() {
   const header = document.querySelector(".sticky-top");
 
