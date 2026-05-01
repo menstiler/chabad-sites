@@ -1531,6 +1531,9 @@ body .co_body .content .form-all p {
   img {
     height: auto;
     max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 10;
+    border-radius: 8px;
   }
 
   @media (max-width: 768px) {
@@ -2145,8 +2148,12 @@ footer .right-column {
   }
 }
 
-article.content {
-  padding-top: 50px;
+.master-content-wrapper + .body_wrapper {
+  padding: 50px;
+
+  @media (max-width: 768px) {
+    padding: 50px 16px 0;
+  }
 }
 
 .breadcrumbs__crumb,
