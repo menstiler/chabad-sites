@@ -2165,3 +2165,23 @@ footer .right-column {
   margin-left: 0;
   margin-right: 0;
 }
+
+.zslides-promo {
+  position: absolute;
+  right: 75px;
+  top: 100px;
+  bottom: 0;
+
+  @media (max-width: 768px) {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.zslides-promo,
+.zslides-promo a {
+  font-size: 15px;
+  font-weight: 500;
+}

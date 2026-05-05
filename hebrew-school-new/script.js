@@ -254,6 +254,15 @@ function setUpArticleBackgrounds() {
   container.classList.add(className);
 }
 
+function setUpPromo() {
+  document
+    .querySelector(".footer3")
+    .insertAdjacentHTML(
+      "beforebegin",
+      '<div class="zslides-promo">Site By <a href="http://www.zslides.com" target="_blank">ZSlides</a></div>',
+    );
+}
+
 function init() {
   setUpScrolling();
   setUpMenu();
@@ -265,6 +274,7 @@ function init() {
   setUpFooter();
   setUpSlidingBanner();
   setUpArticleBackgrounds();
+  setUpPromo();
 }
 
 if (document.readyState !== "loading") {
