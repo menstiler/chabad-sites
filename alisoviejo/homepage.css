@@ -1,0 +1,55 @@
+.hp-table .hp-row-first .promo_slider .slider .slides {
+  padding-top: 32% !important;
+}
+.hp-table .hp-row-first .promo_slider .slider .slides .slide_wrapper {
+  background-color: rgba(220, 227, 211, 0.9) !important;
+}
+
+.hp-table .hp-row-first .promo_slider .slider .slides .slide_wrapper img {
+  opacity: 0.7;
+  mix-blend-mode: normal;
+  background-size: cover !important;
+  background-position-y: -30px !important;
+}
+
+.hp-table .hp-row-first .promo_slider .slider .cycle-caption big {
+  color: #fff !important;
+  font-size: 48px !important;
+  line-height: 55px !important;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 600;
+  font-family: "Brygada 1918", serif !important;
+}
+
+.home .hp-table .hp-row-first .promo_slider .slider .cycle-caption {
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: none;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hp-table .hp-row-first .promo_slider .slider .cycle-caption .readMore {
+  border-color: #b98788 !important;
+  background-color: #b98788 !important;
+  color: #dce3d3 !important;
+  font-family: "Brygada 1918", serif !important;
+  min-width: 212px;
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
+  font-size: 20px !important;
+}
+
+.hp-table .hp-row-first .promo_slider .slider .cycle-caption .readMore:hover {
+  background-color: transparent !important;
+  color: #b98788 !important;
+}
+.hp-table .hp-row-first .promo_slider .slider .cycle-caption p {
+  width: 70% !important;
+  max-width: 100% !important;
+}
