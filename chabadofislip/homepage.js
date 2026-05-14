@@ -24,7 +24,7 @@ const promosWidgetHtml = `<div class="promos-bg">
     <div class="title">Shabbat & Holidays</div>
     </div>
  <div class="promo-box">
- <a href="/5492662"></a>
+ <a href="/7341392"></a>
  <div class="promo-box-info hebrew-school-bg"></div>
     <div class="title">Hebrew School</div>
     </div>
