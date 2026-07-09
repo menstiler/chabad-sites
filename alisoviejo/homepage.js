@@ -45,7 +45,7 @@ function setUpLayout() {
   jQuery(".message").prepend(aboutUsImage);
 
   // wrapping promos in container
-  var $rows = jQuery(".hp-row").slice(2, 3);
+  var $rows = jQuery(".hp-row").slice(2, 4);
 
   $rows.wrapAll('<div class="hp-row-wrapper"></div>');
 
