@@ -57,7 +57,7 @@ function setUpLayout() {
   jQuery(".hp-row-wrapper").append(`<div class='hp-row'>
     <div class="service-container">
     <div class="service"><a href="/4612757"></a><div class="text-content"><div class="times">Shabbat • 9:00 AM</div><div class="title">Shabbat Service</div><p> Join us for Shabbat morning services at the Chabad Jewish Center</p></div></div>
-    <div class="service"><a href="/4137656"></a><div class="text-content"><div class="times"></div><div class="title">Torah & Tea</div><p> A weekly women's gathering featuring Torah insights, tea, and meaningful discussion</p></div></div>
+    <div class="service"><a href="/6310787"></a><div class="text-content"><div class="times"></div><div class="title">Torah & Tea</div><p> A weekly women's gathering featuring Torah insights, tea, and meaningful discussion</p></div></div>
     <div class="service"><a href="/4147253"></a><div class="text-content"><div class="times">Monday & Wednesday • 7:30 PM</div><div class="title">Weekly Torah & Tanya Study</div><p>Classes on the weekly Torah portion and Tanya, held every Monday and Wednesday at 7:30 PM</p></div></div>
     </div>
     </div>`);
