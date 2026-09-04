@@ -3,6 +3,7 @@
 
 .dinner-custom {
   --bg-image: url(https://w2.chabad.org/media/images/1384/nxKB13845885.png) !important;
+  --bg-image-mobile: url(https://w2.chabad.org/media/images/1384/QRCg13846112.png) !important;
   --primary-font:
     "Playfair Display", "Libre Baskerville", sans-serif !important;
   --primary-text-color: rgb(213, 179, 96) !important;
@@ -29,9 +30,12 @@
 .dinner-custom .content_page h2 {
   color: var(--primary-text-color) !important;
 }
-.wrap-image .bannerContainer img {
-  width: 70% !important;
-  margin: 0 auto;
+
+@media screen and (min-width: 1025px) {
+  .wrap-image .bannerContainer img {
+    width: 70% !important;
+    margin: 0 auto;
+  }
 }
 .read-more_link a {
   background-image: url(https://w2.chabad.org/media/images/1384/MaYV13846013.jpeg) !important;
@@ -102,4 +106,8 @@
 .shimmer-button:active {
   transform: scale(0.98);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.gala-footer {
+  color: var(--primary-text-color) !important;
 }
