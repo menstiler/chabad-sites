@@ -600,7 +600,7 @@ body.cco_body #tabContentMain .co_menu_item.donate_link span.parent a:hover {
   .hp-table .hp_subscribe::before,
   .hp_content_wrapper::before,
   .hp-row-wrapper::before {
-    transform: rotate(90deg) scale(3);
+    /* transform: rotate(90deg) scale(3); */
   }
   .hp-table > .hp-row:last-of-type::before,
   .hp-table .hp_subscribe::before,
@@ -1017,6 +1017,11 @@ body.cco_body #tabContentMain .co_menu_item.donate_link span.parent a:hover {
 @media (max-width: 1000px) {
   .hp_content_wrapper {
     padding: 100px 20px;
+    background: url(https://www.chabadofalisoviejo.com/media/images/1368/tbHT13682622.png)
+      repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top center;
   }
   .hp_content_wrapper .g320 {
     margin: 0;
@@ -1343,12 +1348,12 @@ body.cco_body #tabContentMain .co_menu_item.donate_link span.parent a:hover {
     flex-direction: column;
     width: 100% !important;
     justify-content: center;
-    padding: 25px;
+    padding: 40px 25px;
     gap: 25px !important;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 300px) {
   .legacy-widget .legacy-image {
     display: none;
   }
