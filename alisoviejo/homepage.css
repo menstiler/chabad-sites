@@ -248,27 +248,53 @@ body.cco_body #tabContentMain .co_menu_item.donate_link span.parent a:hover {
   }
 }
 
+@media (max-width: 750px) {
+  .hp-row-wrapper .hp-row .promo_slider .cycle-directionNav a {
+    top: 30% !important;
+  }
+}
+
 .hp-row-wrapper .hp-row .promo_slider .cycle-directionNav a {
   top: 45%;
 }
 
-.hp-row .widget-4 .slider,
+@media (min-width: 1025px) {
+  .hp-row .widget-4 .slider {
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .hp-row .widget-4 .slider {
+    position: relative;
+  }
+}
+
 .hp-row .widget-4 .slides,
 .hp-row .widget-4 .slide_wrapper {
   height: 300px !important;
 }
 
 .hp-table > :not(:first-child) .featured-events.promo_slider .cycle-controlNav {
-  bottom: 125px;
+  bottom: 77px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 750px) {
+  .hp-table
+    > :not(:first-child)
+    .featured-events.promo_slider
+    .cycle-controlNav {
+    bottom: 100px;
+  }
+}
+
+@media (max-widzth: 1200px) {
   .widget-4 .slider,
   .widget-4 .slides,
   .widget-4 .slide_wrapper {
     overflow: hidden;
     width: 100% !important;
-    height: 150px !important;
+    position: relative;
   }
 }
 
@@ -280,6 +306,12 @@ body.cco_body #tabContentMain .co_menu_item.donate_link span.parent a:hover {
 
 .hp-table .hp-row .promo_slider .cycle-caption {
   background: rgba(186, 123, 122, 0.5);
+}
+
+@media (max-width: 1200px) {
+  .hp-table .hp-row .widget-4.promo_slider .cycle-caption {
+    margin-top: 43px !important;
+  }
 }
 
 .hp-table .hp-row .promo_slider .cycle-caption .readMore,
@@ -574,11 +606,16 @@ body.cco_body #tabContentMain .co_menu_item.donate_link span.parent a:hover {
   .hp_content_wrapper::before,
   .hp-row-wrapper::before {
     content: "";
-    position: absolute;
+    /* position: absolute; */
     inset: 0;
-    transform: rotate(90deg) scale(2);
     background: url(https://www.chabadofalisoviejo.com/media/images/1368/tbHT13682622.png)
       repeat;
+  }
+  .hp_content_wrapper::before,
+  .hp-row-wrapper::before {
+    position: fixed;
+    /* transform: rotate(90deg); */
+    background-size: cover !important;
   }
   .hp-table .hp_subscribe::before,
   .hp_content_wrapper::before,
@@ -586,7 +623,6 @@ body.cco_body #tabContentMain .co_menu_item.donate_link span.parent a:hover {
     background-repeat: repeat-y;
     background-size: contain;
     background-position: center;
-    z-index: -1;
   }
   .hp-table > .hp-row:last-of-type::before {
     background-size: contain;
@@ -597,20 +633,18 @@ body.cco_body #tabContentMain .co_menu_item.donate_link span.parent a:hover {
 
 @media (max-width: 720px) {
   .hp-table > .hp-row:last-of-type::before,
-  .hp-table .hp_subscribe::before,
-  .hp_content_wrapper::before,
-  .hp-row-wrapper::before {
-    /* transform: rotate(90deg) scale(3); */
+  .hp-table .hp_subscribe::before {
+    transform: rotate(90deg) scale(3);
   }
   .hp-table > .hp-row:last-of-type::before,
   .hp-table .hp_subscribe::before,
   .hp_content_wrapper::before,
   .hp-row-wrapper::before {
     z-index: -1;
-    top: -20%;
-    left: -20%;
-    width: 140%;
-    height: 140%;
+    width: 100%;
+    height: 100%;
+    /* top: 100%; */
+    /* left: 0; */
   }
 }
 
@@ -1017,11 +1051,6 @@ body.cco_body #tabContentMain .co_menu_item.donate_link span.parent a:hover {
 @media (max-width: 1000px) {
   .hp_content_wrapper {
     padding: 100px 20px;
-    background: url(https://www.chabadofalisoviejo.com/media/images/1368/tbHT13682622.png)
-      repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: top center;
   }
   .hp_content_wrapper .g320 {
     margin: 0;
@@ -1062,6 +1091,7 @@ body.cco_body #tabContentMain .co_menu_item.donate_link span.parent a:hover {
 @media (max-width: 1025px) {
   #footer {
     background: none;
+    z-index: 2;
   }
   #footer::before {
     content: "";
@@ -1159,6 +1189,7 @@ body.cco_body #tabContentMain .co_menu_item.donate_link span.parent a:hover {
   border-color: var(--primary-color);
   color: var(--primary-color);
   padding: 10px 15px !important;
+  border-radius: 8px;
 }
 
 .hp_content_wrapper .readMore:hover {
@@ -1232,7 +1263,6 @@ body.cco_body #tabContentMain .co_menu_item.donate_link span.parent a:hover {
 .hp_content_wrapper .sneak-peek-container .readMore {
   margin-top: 0px;
   font-family: var(--primary-font);
-  border-radius: 8px;
 }
 
 @media (max-width: 1025px) {
@@ -1330,6 +1360,8 @@ body.cco_body #tabContentMain .co_menu_item.donate_link span.parent a:hover {
   display: flex;
   height: 163px;
   background-color: var(--secondary-color);
+  position: relative;
+  z-index: 2;
 }
 
 @media (max-width: 600px) {
@@ -1340,6 +1372,7 @@ body.cco_body #tabContentMain .co_menu_item.donate_link span.parent a:hover {
 @media (max-width: 1025px) {
   .legacy-widget {
     height: auto !important;
+    z-index: 2;
   }
   .legacy-widget .legacy-image {
     width: 35% !important;
