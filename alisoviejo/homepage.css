@@ -402,8 +402,10 @@ body.cco_body #tabContentMain .co_menu_item.donate_link span.parent a:hover {
   > span {
   display: none;
 }
+
 .hp-table > :not(:first-child) .featured-events.promo_slider .cycle-caption {
   width: 100%;
+  pointer-events: auto;
 }
 
 .hp-table
