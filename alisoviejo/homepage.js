@@ -40,7 +40,7 @@ function setUpLayout() {
     ".message .widget_content .bottom_padding, .message .widget_content .readMore",
   ).wrapAll('<div class="text-column"></div>');
 
-  const aboutUsImage = `<div class="image-column"></div>`;
+  const aboutUsImage = `<div class="image-column"><div class="photo-slideshow"></div></div>`;
 
   jQuery(".message").prepend(aboutUsImage);
 
@@ -104,8 +104,85 @@ function setUpLayout() {
   widgetsSection.insertAdjacentHTML("afterend", hugInJugWidget);
 }
 
+function setUpAboutUsImages() {
+  const slideshow = document.querySelector(
+    ".widget-1.message .photo-slideshow",
+  );
+
+  if (!slideshow) {
+    console.warn("Slideshow container not found.");
+    return;
+  }
+
+  const waitForPhotos = setInterval(function () {
+    const source = document.querySelector(".latest_photos");
+
+    // Keep waiting until the Latest Photos widget appears
+    if (!source) {
+      console.log("Waiting for Latest Photos widget...");
+      return;
+    }
+
+    const images = source.querySelectorAll("li img");
+
+    // The widget exists, but its images may not have loaded yet
+    if (!images.length) {
+      console.log("Waiting for photo images...");
+      return;
+    }
+
+    // Extract the background-image URLs
+    const urls = Array.from(images)
+      .map(function (img) {
+        const bg = img.style.backgroundImage;
+        const match = bg.match(/url\(["']?(.*?)["']?\)/i);
+        return match ? match[1] : null;
+      })
+      .filter(Boolean);
+
+    // Wait if the photos have not been populated yet
+    if (!urls.length) {
+      console.log("Widget found, but no photo URLs yet...");
+      return;
+    }
+
+    // Stop polling once we have the URLs
+    clearInterval(waitForPhotos);
+
+    console.log("Photo URLs found:", urls);
+
+    // Build the slideshow
+    slideshow.innerHTML = "";
+
+    const slides = urls.map(function (url, index) {
+      const img = document.createElement("img");
+      img.src = url;
+      img.alt = "About Us photo " + (index + 1);
+
+      if (index === 0) {
+        img.classList.add("active");
+      }
+
+      slideshow.appendChild(img);
+      return img;
+    });
+
+    // Rotate photos every 3 seconds
+    if (slides.length > 1) {
+      let current = 0;
+
+      setInterval(function () {
+        slides[current].classList.remove("active");
+        current = (current + 1) % slides.length;
+        slides[current].classList.add("active");
+      }, 3000);
+    }
+  }, 500);
+}
+
 function init() {
   setUpLayout();
+  setUpAboutUsImages();
 }
 
 if (document.readyState !== "loading") {
