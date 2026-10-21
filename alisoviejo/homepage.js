@@ -167,6 +167,14 @@ function setUpAboutUsImages() {
       return img;
     });
 
+    const photos = document.querySelector(".latest_photos");
+    const wrapper = document.querySelector(".body_wrapper");
+    const parent = photos?.closest(".hp-row");
+
+    if (parent && wrapper) {
+      wrapper.appendChild(parent);
+    }
+
     // Rotate photos every 3 seconds
     if (slides.length > 1) {
       let current = 0;
